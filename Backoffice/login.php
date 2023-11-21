@@ -43,25 +43,25 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">ยินดีต้อนรับ Cat Shop !</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="login_db.php" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp" placeholder="อีเมล"
+                                                id="exampleInputEmail" name="email" aria-describedby="emailHelp" placeholder="อีเมล"
                                                 required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="รหัสผ่าน" required>
+                                                id="exampleInputPassword" name="password" placeholder="รหัสผ่าน" required>
                                         </div>
                                         <div class="form-group">
                                             <div class="row justify-content-end">
                                                 <a class="small pr-3 text-gray-600" href="forgot-password.html">ลืมรหัสผ่าน ?</a>
                                             </div>
                                         </div>
-                                        <button type="submit"class="btn btn-primary btn-user btn-block">เข้าสู่ระบบ</button>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">เข้าสู่ระบบ</button>
                                     </form>
                                     <div class="text-center  mt-2">
-                                        <a class="small" href="register.html">สมัครสมาชิก !</a>
+                                        <a class="small" href="register.php">สมัครสมาชิก !</a>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,6 @@
         </div>
 
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

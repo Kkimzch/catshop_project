@@ -41,24 +41,25 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">สมัครสมาชิก !</h1>
                                     </div>
-                                    <form class="user">
+                                    <!-- เก็บข้อมูลสมัครสมาชิก -->
+                                    <form class="user" action="register_db.php" method="post">
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" class="form-control form-control-user"
-                                                    id="exampleFirstName" placeholder="ชื่อ" required>
+                                                    id="exampleFirstName" name="FirstName" placeholder="ชื่อ" required>
                                             </div>
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-control form-control-user"
-                                                    id="exampleLastName" placeholder="นามสกุล" required>
+                                                    id="exampleLastName" name="LastName" placeholder="นามสกุล" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" id="exampleNumber" name="exampleNumber"
-                                                placeholder="เบอร์โทรศัพท์" required pattern="[0-9]{10}">
+                                                placeholder="เบอร์โทรศัพท์" name="exampleNumber" required pattern="[0-9]{10}">
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" placeholder="อีเมล" required>
+                                                id="exampleInputEmail" name="email" placeholder="อีเมล" required>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
@@ -77,8 +78,8 @@
                                         <button type="submit"
                                             class="btn btn-primary btn-user btn-block">สมัครสมาชิก</button>
                                     </form>
-                                    <div class="text-center">
-                                        <a class="small" href="login.html">เป็นสมาชิกอยู่เเล้ว ? เข้าสู่ระบบ !</a>
+                                    <div class="text-center mt-2">
+                                        <a class="small" href="login.php">เป็นสมาชิกอยู่เเล้ว ? เข้าสู่ระบบ !</a>
                                     </div>
                                 </div>
                             </div>
