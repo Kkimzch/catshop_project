@@ -1,782 +1,461 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+	<?php
+	require("database.php")
+	
+	?>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
 
-    <title>Onix Digital Marketing HTML5 Template</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <!--
-
-TemplateMo 565 Onix Digital
-
-https://templatemo.com/tm-565-onix-digital
-
--->
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="css/tiny-slider.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<title>Cat Shop</title>
 </head>
 
 <body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-        <div class="preloader-inner">
-            <span class="dot"></span>
-            <div class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
+	<!-- Start Header/Navigation -->
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
 
-    <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
-                            <img src="assets/images/logo.png">
-                        </a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#services">Services</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
-                            <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
-                            <li class="scroll-to-section"><a href="#video">Videos</a></li>
-                            <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
-                            <li class="scroll-to-section">
-                                <div class="main-red-button-hover"><a href="Backoffice/login.html">เข้าสู่ระบบ</a></div>
-                            </li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
+		<div class="container">
+			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-    <div class="main-banner" id="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-6 align-self-center">
-                            <div class="owl-carousel owl-banner">
-                                <div class="item header-text">
-                                    <h6>ยินดีต้องรับสู่ Cat Shop !</h6>
-                                    <h2><em>เว็บไซต์สำหรับคนรัก </em> <span>"แมว"</span></h2>
-                                    <p>รวมอาหารเเมวมากมายหลากหลายชนิด รวบรวมมาให้คุณได้เลือกชม เลือกซื้อได้ที่นี่ !</p>
-                                    <div class="down-buttons">
-                                        <div class="main-blue-button-hover">
-                                            <a href="#contact">เลือกชมสินค้า</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item header-text">
-                                    <h6>ยินดีต้องรับสู่ Cat Shop !</h6>
-                                    <h2><em>พลิดเพลินไปกับการเลือกซื้อ</em> <span>สินค้าคุณภาพดี</span></h2>
-                                    <p>กรุณาเข้าสู่ระบบเพื่อตรวจสอบคำสั่งซื้อของท่าน</p>
-                                    <div class="down-buttons">
-                                        <div class="main-blue-button-hover">
-                                            <a href="#video">เข้าสู่ระบบ</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- type menu -->
-    <div id="services" class="our-services section">
-        <div class="services-right-dec">
-            <img src="assets/images/services-right-dec.png" alt="">
-        </div>
-        <div class="container">
-            <div class="services-left-dec">
-                <img src="assets/images/services-left-dec.png" alt="">
-            </div>
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2><em>หมวดหมู่</em><span>สินค้า</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="owl-carousel owl-services">
-                        <div class="item">
-                            <h4 class="m-0">อาหารเเบบเม็ด</h4>
-                        </div>
-                        <div class="item">
-                            <h4 class="m-0">อาหารแบบเปียก</h4>
-                        </div>
-                        <div class="item">
-                            <h4 class="m-0">ขนม</h4>
-                        </div>
-                        <div class="item">
-                            <h4 class="m-0">อาหารลูกเเมว</h4>
-                        </div>
-                        <div class="item">
-                            <h4 class="m-0">อาหารเเมวสูงวัย</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
+				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <div id="about" class="about-us section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <div class="left-image">
-                        <img src="assets/images/about-left-image.png" alt="Two Girls working together">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <h2>Grow your website with our <em>SEO Tools</em> &amp; <span>Project</span> Management</h2>
-                        <p>You can browse free HTML templates on Too CSS website. Visit the website and explore latest
-                            website templates for your projects.</p>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="fact-item">
-                                    <div class="count-area-content">
-                                        <div class="icon">
-                                            <img src="assets/images/service-icon-01.png" alt="">
-                                        </div>
-                                        <div class="count-digit">320</div>
-                                        <div class="count-title">SEO Projects</div>
-                                        <p>Lorem ipsum dolor sitti amet, consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="fact-item">
-                                    <div class="count-area-content">
-                                        <div class="icon">
-                                            <img src="assets/images/service-icon-02.png" alt="">
-                                        </div>
-                                        <div class="count-digit">640</div>
-                                        <div class="count-title">Websites</div>
-                                        <p>Lorem ipsum dolor sitti amet, consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="fact-item">
-                                    <div class="count-area-content">
-                                        <div class="icon">
-                                            <img src="assets/images/service-icon-03.png" alt="">
-                                        </div>
-                                        <div class="count-digit">120</div>
-                                        <div class="count-title">Satisfied Clients</div>
-                                        <p>Lorem ipsum dolor sitti amet, consectetur.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="collapse navbar-collapse" id="navbarsCat Shop">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.php">หน้าเเรก</a>
+					</li>
+					<li><a class="nav-link" href="shop.html">สินค้า</a></li>
+					<li><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+					<li><a class="nav-link" href="blog.html">บทความ</a></li>
+					<li><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+				</ul>
 
-    <div id="portfolio" class="our-portfolio section">
-        <div class="portfolio-left-dec">
-            <img src="assets/images/portfolio-left-dec.png" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2>Our Recent <em>Projects</em> &amp; Case Studies <span>for Clients</span></h2>
-                        <span>Our Portfolio</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="owl-carousel owl-portfolio">
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-01.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing"
-                                            target="_parent">
-                                            <h4>First Project</h4>
-                                        </a>
-                                        <span>Plot Listing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-02.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Project Two</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-03.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic"
-                                            target="_parent">
-                                            <h4>Third Project</h4>
-                                        </a>
-                                        <span>Space Dynamic SEO</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-04.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Project Four</h4>
-                                        </a>
-                                        <span>Website Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-01.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Fifth Project</h4>
-                                        </a>
-                                        <span>Digital Assets</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-02.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Sixth Project</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-03.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>7th Project</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-04.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>8th Project</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-01.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>9th Project</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-02.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Project Ten</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-03.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>Project Eleven</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="assets/images/portfolio-04.jpg" alt="">
-                                <div class="hover-effect">
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h4>12th Project</h4>
-                                        </a>
-                                        <span>SEO &amp; Marketing</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 
-    <div id="pricing" class="pricing-tables">
-        <div class="tables-left-dec">
-            <img src="assets/images/tables-left-dec.png" alt="">
-        </div>
-        <div class="tables-right-dec">
-            <img src="assets/images/tables-right-dec.png" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading">
-                        <h2>Select a suitable <em>plan</em> for your next <span>projects</span></h2>
-                        <span>Our Plans</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="item first-item">
-                        <h4>Starter Plan</h4>
-                        <img src="" <em>$160/mo</em>
-                        <span>$140</span>
-                        <ul>
-                            <li>10 Projects</li>
-                            <li>100 GB space</li>
-                            <li>20 SEO checkups</li>
-                            <li>Basic Support</li>
-                        </ul>
-                        <div class="main-blue-button-hover">
-                            <a href="#">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item second-item">
-                        <h4>Standard Plan</h4>
-                        <em>$240/mo</em>
-                        <span>$200</span>
-                        <ul>
-                            <li>20 Projects</li>
-                            <li>200 GB space</li>
-                            <li>50 SEO checkups</li>
-                            <li>Pro Support</li>
-                        </ul>
-                        <div class="main-blue-button-hover">
-                            <a href="#">Get it Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item third-item">
-                        <h4>Advanced Plan</h4>
-                        <em>$360/mo</em>
-                        <span>$280</span>
-                        <ul>
-                            <li>30 Projects</li>
-                            <li>300 GB space</li>
-                            <li>100 SEO checkups</li>
-                            <li>Best Support</li>
-                        </ul>
-                        <div class="main-blue-button-hover">
-                            <a href="#">Buy Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					<li>
+						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
+						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="#">ชื่อ User</a>
+							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">ออกจากระบบ</a>
+						</div>
+					</li>
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+				</ul>
+			</div>
+		</div>
 
-    <div id="subscribe" class="subscribe">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="inner-content">
-                        <div class="row">
-                            <div class="col-lg-10 offset-lg-1">
-                                <h2>Know Your Website SEO Score by Email</h2>
-                                <form id="subscribe" action="" method="get">
-                                    <input type="text" name="website" id="website" placeholder="Your Website URL"
-                                        required="">
-                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your Email" required="">
-                                    <button type="submit" id="form-submit" class="main-button ">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	</nav>
+	<!-- End Header/Navigation -->
 
-    <div id="video" class="our-videos section">
-        <div class="videos-left-dec">
-            <img src="assets/images/videos-left-dec.png" alt="">
-        </div>
-        <div class="videos-right-dec">
-            <img src="assets/images/videos-right-dec.png" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="naccs">
-                        <div class="grid">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <ul class="nacc">
-                                        <li class="active">
-                                            <div>
-                                                <div class="thumb">
-                                                    <iframe width="100%" height="auto"
-                                                        src="https://www.youtube.com/embed/JynGuQx4a1Y"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen></iframe>
-                                                    <div class="overlay-effect">
-                                                        <a href="#">
-                                                            <h4>Project One</h4>
-                                                        </a>
-                                                        <span>SEO &amp; Marketing</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <iframe width="100%" height="auto"
-                                                        src="https://www.youtube.com/embed/RdJBSFpcO4M"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen></iframe>
-                                                    <div class="overlay-effect">
-                                                        <a href="#">
-                                                            <h4>Second Project</h4>
-                                                        </a>
-                                                        <span>Advertising &amp; Marketing</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <iframe width="100%" height="auto"
-                                                        src="https://www.youtube.com/embed/ZlfAjbQiL78"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen></iframe>
-                                                    <div class="overlay-effect">
-                                                        <a href="#">
-                                                            <h4>Project Three</h4>
-                                                        </a>
-                                                        <span>Digital &amp; Marketing</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <iframe width="100%" height="auto"
-                                                        src="https://www.youtube.com/embed/mx1WseE7-0Y"
-                                                        title="YouTube video player" frameborder="0"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowfullscreen></iframe>
-                                                    <div class="overlay-effect">
-                                                        <a href="#">
-                                                            <h4>Fourth Project</h4>
-                                                        </a>
-                                                        <span>SEO &amp; Advertising</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-4">
-                                    <div class="menu">
-                                        <div class="active">
-                                            <div class="thumb">
-                                                <img src="assets/images/video-thumb-01.png" alt="">
-                                                <div class="inner-content">
-                                                    <h4>Project One</h4>
-                                                    <span>SEO &amp; Marketing</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="thumb">
-                                                <img src="assets/images/video-thumb-02.png" alt="">
-                                                <div class="inner-content">
-                                                    <h4>Second Project</h4>
-                                                    <span>Advertising &amp; Marketing</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="thumb">
-                                                <img src="assets/images/video-thumb-03.png" alt="Marketing">
-                                                <div class="inner-content">
-                                                    <h4>Project Three</h4>
-                                                    <span>Digital &amp; Marketing</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="thumb">
-                                                <img src="assets/images/video-thumb-04.png" alt="SEO Work">
-                                                <div class="inner-content">
-                                                    <h4>Fourth Project</h4>
-                                                    <span>SEO &amp; Advertising</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Start Hero Section -->
+	<div class="hero">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="intro-excerpt">
+						<h1>Cat Shop !! <p clsas="d-block">ยินดีต้อนรับ</p>
+						</h1>
+						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
+							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
+						<p><a href="" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
+					</div>
+				</div>
+				<div class="col-lg-7">
+					<div class="hero-img-wrap">
+						<img src="images/couch1.png" class="img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Hero Section -->
 
-    <div id="contact" class="contact-us section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="section-heading">
-                        <h2>Feel free to <em>Contact</em> us via the <span>HTML form</span></h2>
-                        <div id="map">
-                            <iframe
-                                src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                width="100%" height="360px" frameborder="0" style="border:0"
-                                allowfullscreen=""></iframe>
-                        </div>
-                        <div class="info">
-                            <span><i class="fa fa-phone"></i> <a href="#">010-020-0340<br>090-080-0760</a></span>
-                            <span><i class="fa fa-envelope"></i> <a
-                                    href="#">info@company.com<br>mail@company.com</a></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 align-self-center">
-                    <form id="contact" action="" method="get">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <input type="name" name="name" id="name" placeholder="Name" autocomplete="on"
-                                        required>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <input type="surname" name="surname" id="surname" placeholder="Surname"
-                                        autocomplete="on" required>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your Email" required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <input type="text" name="website" id="website" placeholder="Your Website URL"
-                                        required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="main-button">Submit Request</button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="contact-dec">
-            <img src="assets/images/contact-dec.png" alt="">
-        </div>
-        <div class="contact-left-dec">
-            <img src="assets/images/contact-left-dec.png" alt="">
-        </div>
-    </div>
+	<!-- Start Testimonial Slider -->
+	<div class="testimonial-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 mx-auto text-center">
+					<h2 class="section-title">หมวดหมู่</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="testimonial-slider-wrap text-center">
 
-    <div class="footer-dec">
-        <img src="assets/images/footer-dec.png" alt="">
-    </div>
+						<div id="testimonial-nav">
+							<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
+							<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+						</div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="about footer-item">
-                        <div class="logo">
-                            <a href="#"><img src="assets/images/logo.png" alt="Onix Digital TemplateMo"></a>
-                        </div>
-                        <a href="#">info@company.com</a>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="services footer-item">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#">SEO Development</a></li>
-                            <li><a href="#">Business Growth</a></li>
-                            <li><a href="#">Social Media Managment</a></li>
-                            <li><a href="#">Website Optimization</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="community footer-item">
-                        <h4>Community</h4>
-                        <ul>
-                            <li><a href="#">Digital Marketing</a></li>
-                            <li><a href="#">Business Ideas</a></li>
-                            <li><a href="#">Website Checkup</a></li>
-                            <li><a href="#">Page Speed Test</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="subscribe-newsletters footer-item">
-                        <h4>Subscribe Newsletters</h4>
-                        <p>Get our latest news and ideas to your inbox</p>
-                        <form action="#" method="get">
-                            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email"
-                                required="">
-                            <button type="submit" id="form-submit" class="main-button "><i
-                                    class="fa fa-paper-plane-o"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="copyright">
-                        <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved.
-                            <br>
-                            Designed by <a rel="nofollow" href="https://templatemo.com"
-                                title="free CSS templates">TemplateMo</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+						<div class="testimonial-slider" data-ride="carousel">
+							<?php
+      								$sql = "SELECT * FROM `type` WHERE 1";
+     								 $result = mysqli_query($conn, $sql);
+     								 while ($row = $result->fetch_assoc()) {
 
+     								 ?>
 
-    <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/custom.js"></script>
+							<div class="item">
+								<div class="row justify-content-center">
+									<div class="col-lg-8 mx-auto">
+										<div class="testimonial-block text-center">
+											<a href="" class="btn btn-secondary me-2"><?= $row['type_name'] ?></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<?php
+      							}
+     						 ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Testimonial Slider -->
 
-    <script>
-        // Acc
-        $(document).on("click", ".naccs .menu div", function () {
-            var numberIndex = $(this).index();
+	<!-- Start Product Section -->
+	<div class="product-section">
+		<div class="container">
+			<div class="row">
 
-            if (!$(this).is("active")) {
-                $(".naccs .menu div").removeClass("active");
-                $(".naccs ul li").removeClass("active");
+				<!-- Start Column 1 -->
+				<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+					<h2 class="mb-4 section-title">สินค้าของเรา</h2>
+					<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+						vulputate velit imperdiet dolor tempor tristique. </p>
+					<p><a href="shop.html" class="btn">ดูเพิ่มเติม</a></p>
+				</div>
+				<!-- End Column 1 -->
+				<div class="col-md-12 col-lg-9 mb-5 mb-lg-0">
+					<div class="row mb-4">
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="product_detail.php">
+								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<strong class="product-price">$50.00</strong>
+								<span href="cart.html" class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="cart.html">
+								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<strong class="product-price">$50.00</strong>
 
-                $(this).addClass("active");
-                $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+								<span class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="cart.html">
+								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<strong class="product-price">$50.00</strong>
 
-                var listItemHeight = $(".naccs ul")
-                    .find("li:eq(" + numberIndex + ")")
-                    .innerHeight();
-                $(".naccs ul").height(listItemHeight + "px");
-            }
-        });
-    </script>
+								<span class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="cart.html">
+								<img src="images/person_2.jpg" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic uj Chair s</h3>
+								<strong class="product-price">$50.00</strong>
+
+								<span class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="cart.html">
+								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<strong class="product-price">$50.00</strong>
+
+								<span class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+							<a class="product-item" href="cart.html">
+								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<strong class="product-price">$50.00</strong>
+
+								<span class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+					</div>
+					<!--  -->
+
+				</div>
+				<a href="#" class="more mt-5" align="end">ดูสินค้าทั้งหมด</a>
+			</div>
+		</div>
+	</div>
+	<!-- End Product Section -->
+
+	<!-- Start Why Choose Us Section -->
+	<div class="why-choose-section">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-6">
+					<h2 class="section-title">ทำไมถึงต้องเลือกสินค้าจากร้านเรา</h2>
+					<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
+						imperdiet dolor tempor tristique.</p>
+
+					<div class="row my-5">
+						<div class="col-6 col-md-6">
+							<div class="feature">
+								<div class="icon">
+									<img src="images/truck.svg" alt="Image" class="imf-fluid">
+								</div>
+								<h3>ส่งฟรี &amp; ขั้นต่ำ 200 บาท</h3>
+								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+									vulputate.</p>
+							</div>
+						</div>
+
+						<div class="col-6 col-md-6">
+							<div class="feature">
+								<div class="icon">
+									<img src="images/bag.svg" alt="Image" class="imf-fluid">
+								</div>
+								<h3>ซื้อสินค้าง่าย ๆ ไม่ต้องไปถึงห้าง</h3>
+								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+									vulputate.</p>
+							</div>
+						</div>
+
+						<div class="col-6 col-md-6">
+							<div class="feature">
+								<div class="icon">
+									<img src="images/support.svg" alt="Image" class="imf-fluid">
+								</div>
+								<h3>มีหน้าร้านจริง</h3>
+								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
+									vulputate.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-5">
+					<div class="img-wrap">
+						<img src="images/why-choose-us-img.png" alt="Image" class="img-fluid">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End Why Choose Us Section -->
+
+	<!-- Start We Help Section -->
+	<div class="we-help-section">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-7 mb-5 mb-lg-0">
+					<div class="imgs-grid">
+						<div class="grid grid-1"><img src="images/img-grid-1 1.png" alt="Untree.co"></div>
+						<div class="grid grid-2"><img src="images/img-grid-2 1.png" alt="Untree.co"></div>
+						<div class="grid grid-3"><img src="images/img-grid-3 1.png" alt="Untree.co"></div>
+					</div>
+				</div>
+				<div class="col-lg-5 ps-lg-5">
+					<h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
+					<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada.
+						Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque
+						habitant morbi tristique senectus et netus et malesuada</p>
+
+					<ul class="list-unstyled custom-list my-4">
+						<li>Donec vitae odio quis nisl dapibus malesuada</li>
+						<li>Donec vitae odio quis nisl dapibus malesuada</li>
+						<li>Donec vitae odio quis nisl dapibus malesuada</li>
+						<li>Donec vitae odio quis nisl dapibus malesuada</li>
+					</ul>
+					<p><a herf="#" class="btn">Explore</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End We Help Section -->
+
+	<!-- Start Blog Section -->
+	<div class="blog-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md-6">
+					<h2 class="section-title">บทความน่าสนใจ</h2>
+				</div>
+				<div class="col-md-6 text-start text-md-end">
+					<a href="#" class="more">อ่านบทความทั้งหมด</a>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+					<div class="post-entry">
+						<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image"
+								class="img-fluid"></a>
+						<div class="post-content-entry">
+							<h3><a href="#">First Time หน้าเเรก Owner Ideas</a></h3>
+							<div class="meta">
+								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19,
+										2021</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+					<div class="post-entry">
+						<a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image"
+								class="img-fluid"></a>
+						<div class="post-content-entry">
+							<h3><a href="#">How To Keep Your Cat Shopture Clean</a></h3>
+							<div class="meta">
+								<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+					<div class="post-entry">
+						<a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image"
+								class="img-fluid"></a>
+						<div class="post-content-entry">
+							<h3><a href="#">Small Space Cat Shopture Apartment Ideas</a></h3>
+							<div class="meta">
+								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12,
+										2021</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- End Blog Section -->
+
+	<!-- Start Footer Section -->
+	<footer class="footer-section">
+		<div class="container relative">
+
+			<div class="sofa-img">
+				<img src="images/sofa 1.png" alt="Image" class="img-fluid">
+			</div>
+
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
+					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
+						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
+						Pellentesque habitant</p>
+
+					<ul class="list-unstyled custom-social">
+						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="row links-wrap">
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">About us</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Contact us</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Knowledge base</a></li>
+								<li><a href="#">Live chat</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6">
+						<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
+								document.write(new Date().getFullYear());
+							</script>. All Rights Reserved. &mdash; Designed with love by <a
+								href="https://untree.co">Untree.co</a> Distributed By <a
+								hreff="https://themewagon.com">ThemeWagon</a>
+							<!-- License information: https://untree.co/license/ -->
+						</p>
+					</div>
+
+					<div class="col-lg-6 text-center text-lg-end">
+						<ul class="list-unstyled d-inline-flex ms-auto">
+							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<!-- End Footer Section -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/custom.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
 
 </html>

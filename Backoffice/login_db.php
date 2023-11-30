@@ -2,7 +2,6 @@
 ob_start();
 require("../database.php");
 session_start();
-$errors = array();
 echo '
    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
@@ -12,7 +11,6 @@ echo '
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     
-    if (count($errors) == 0) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
         $result = mysqli_query($conn, $query);
@@ -48,4 +46,3 @@ echo '
             }, 1000);
         </script>
     ';
-    }

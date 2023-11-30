@@ -72,6 +72,7 @@
                                                     id="exampleRepeatPassword" name="exampleRepeatPassword"
                                                     placeholder="ยืนยันรหัสผ่าน" required>
                                             </div>
+                                            <!-- error รหัสผ่านไม่ถูก -->
                                             <span class="pl-3 small mt-1" id="password_error"
                                                 style="color: red;"></span>
                                         </div>
