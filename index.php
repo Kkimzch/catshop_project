@@ -187,7 +187,7 @@
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
 							<a class="product-item" href="cart.html">
 								<img src="images/person_2.jpg" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
+								<h3 class="product-title mt-3">Nordic uj Chair</h3>
 								<strong class="product-price">$50.00</strong>
 
 								<span class="icon-cross">
