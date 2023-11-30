@@ -9,10 +9,13 @@
 <html lang="en">
 
 <head>
+	<?php
+	require("database.php")
+	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="shortcut icon" href="cat-icon.png">
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap4" />
@@ -60,27 +63,47 @@
 	<!-- End Header/Navigation -->
 
 	<!-- Start Hero Section -->
+	<?php
+	$id = $_GET["id"];
+	$name = $_GET["name"];
+	?>
 	<div class="hero">
 		<div class="container">
 			<div class="row justify-content-between">
-				<div class="col-lg-5">
+				<div class="col">
 					<div>
-						<h1>ชื่อสินค้า</h1>
+						<h1><?= $name; ?></h1>
 					</div>
-				</div>
-				<div class="col-lg-7">
-
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End Hero Section -->
+	<?php
+      				$sql = "SELECT * FROM `product` WHERE product_id=" . $id . "";
+     				$result = mysqli_query($conn, $sql);
+     				$row = $result->fetch_assoc();
+					$typeid = $row["type_id"];
+
+    ?>
 	<div class="untree_co-section product-section before-footer-section">
 		<div class="container">
+			<nav aria-label="breadcrumb">
+					<?php
+      				$sql2 = "SELECT * FROM `type` WHERE type_id=" . $typeid . "";
+     				$result2 = mysqli_query($conn, $sql2);
+     				$row2 = $result2->fetch_assoc();
+    				?>
+				<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a class="text-decoration-none" href="shop.php">สินค้า</a></li>
+					<li class="breadcrumb-item"><a class="text-decoration-none" href="shop_type.php?id=<?php echo $row2['type_id'] ?>&&type=<?php echo $row2['type_name'] ?>"><?= $row2['type_name'] ?></a></li>
+					<li class="breadcrumb-item active" aria-current="page"><?= $row['name'] ?></li>
+				</ol>
+			</nav>
 			<div class="row">
 				<div class="col-12 col-md-5 col-lg-5 mb-5 border bg-white">
 					<div align="center">
-						<img src="images/product1.1.png" class="img-fluid product-thumbnail"
+						<img src="images/product/<?= $row['img'] ?>" class="img-fluid product-thumbnail"
 							style="width: 300px; height: auto;" id="myImg">
 					</div>
 					<div id="myModal" class="modal">
@@ -89,11 +112,11 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-7 col-lg-7">
+
 					<div class="p-3 p-lg-5 ">
-						<h2 class="text-primary" class="h3 mb-3 text-black">อาหารเเมว บลาๆ</h2>
-						<h2 class="text-dark">348 บาท</h2>
-						<p>รายละเอียดดดดดดดดด รายละเอียดดดดดดดดด รายละเอียดดดดดดดดด รายละเอียดดดดดดดดด
-							รายละเอียดดดดดดดดด รายละเอียดดดดดดดดด รายละเอียดดดดดดดดด</p>
+						<h2 class="text-primary" class="h3 mb-3 text-black"><?= $row['name'] ?></h2>
+						<h2 class="text-dark">฿<?= $row['price'] ?> / <?= $row['unit'] ?></h2>
+						<p><?= $row['description'] ?></p>
 
 					</div>
 					<div align="center">
@@ -102,6 +125,28 @@
 					</div>
 				</div>
 			</div>
+			<h5>สินค้าเเนะนำ</h5>
+			<div class="row mb-4">
+						<?php
+      					$sql2 = "SELECT * FROM `product` ORDER BY RAND()
+					  	LIMIT 4;";
+     					$result2 = mysqli_query($conn, $sql2);
+     					while ($row2 = $result2->fetch_assoc()) {
+     					?>
+						<div class="col-12 col-md-3 col-lg-3 mb-5 mb-md-0">
+							<a class="product-item my-3" href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
+								<img src="images/product/<?= $row2['img'] ?>" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3"><?= $row2['name'] ?></h3>
+								<strong class="product-price">฿<?= $row2['price'] ?></strong>
+								<span href="cart.php" class="icon-cross">
+									<img src="images/cross.svg" class="img-fluid">
+								</span>
+							</a>
+						</div>
+						<?php
+      					}
+     					?>
+					</div>
 		</div>
 	</div>
 
@@ -111,10 +156,12 @@
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
 					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
+					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด
+						อาหารเปียก ขนม ของใช้ ของเล่น</p>
 
 					<ul class="list-unstyled custom-social">
-						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat Shop.</strong></li>
+						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
+								Shop.</strong></li>
 
 					</ul>
 				</div>

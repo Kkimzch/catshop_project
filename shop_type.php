@@ -4,6 +4,7 @@
 <head>
 	<?php
 	require("database.php")
+	
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -56,15 +57,19 @@
 	<!-- End Header/Navigation -->
 
 	<!-- Start Hero Section -->
+	<?php
+	$id = $_GET["id"];
+	$type_name = $_GET["type"];
+	?>
 	<div class="hero">
 		<div class="container">
 			<div class="row justify-content-between">
-				<div class="col-lg-5">
-					<div class="intro-excerpt">
-						<h1>สินค้าทั้งหมด</h1>
+				<div class="col-lg-7">
+					<div>
+						<h1><?= $type_name; ?></h1>
 					</div>
 				</div>
-				<div class="col-lg-7">
+				<div class="col-lg-5">
 
 				</div>
 			</div>
@@ -93,21 +98,20 @@
 					<?= $row['type_name'] ?>
 				</div>
 			</a>
-
 			<?php
       							}
      		?>
 
 		</div>
 	</div>
-	<!--  End price -->
+	<!--  End Type -->
 
 	<!-- Product -->
 	<div class="untree_co-section product-section before-footer-section">
 		<div class="container">
 			<div class="row ">
 				<?php
-      				$sql2 = "SELECT * FROM `product` WHERE 1";
+      				$sql2 = "SELECT * FROM `product` WHERE type_id=" . $id . "";
      				$result2 = mysqli_query($conn, $sql2);
      				while ($row2 = $result2->fetch_assoc()) {
      			?>
