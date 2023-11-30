@@ -40,10 +40,10 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
 					</li>
-					<li><a class="nav-link" href="shop.html">สินค้า</a></li>
-					<li><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
-					<li><a class="nav-link" href="blog.html">บทความ</a></li>
-					<li><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+					<li><a class="nav-link" href="shop.php">สินค้า</a></li>
+					<li><a class="nav-link" href="blog.php">บทความ</a></li>
+					<li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
+					<li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
@@ -76,7 +76,7 @@
 						</h1>
 						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
 							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
-						<p><a href="" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
+						<p><a href="shop.php" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
 					</div>
 				</div>
 				<div class="col-lg-7">
@@ -144,7 +144,7 @@
 					<h2 class="mb-4 section-title">สินค้าของเรา</h2>
 					<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
 						vulputate velit imperdiet dolor tempor tristique. </p>
-					<p><a href="shop.html" class="btn">ดูเพิ่มเติม</a></p>
+					<p><a href="shop.php" class="btn">ดูเพิ่มเติม</a></p>
 				</div>
 				<!-- End Column 1 -->
 				<div class="col-md-12 col-lg-9 mb-5 mb-lg-0">
@@ -154,7 +154,7 @@
 								<img src="images/product1.1.png" style="width: 216px; height: auto;">
 								<h3 class="product-title mt-3">Nordic Chair</h3>
 								<strong class="product-price">$50.00</strong>
-								<span href="cart.html" class="icon-cross">
+								<span href="cart.php" class="icon-cross">
 									<img src="images/cross.svg" class="img-fluid">
 								</span>
 							</a>
@@ -208,7 +208,7 @@
 						</div>
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
 							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<img src="images/sofa 1.png" style="width: 216px; height: auto;">
 								<h3 class="product-title mt-3">Nordic Chair</h3>
 								<strong class="product-price">$50.00</strong>
 
@@ -376,71 +376,52 @@
 	<!-- Start Footer Section -->
 	<footer class="footer-section">
 		<div class="container relative">
-
-			<div class="sofa-img">
-				<img src="images/sofa 1.png" alt="Image" class="img-fluid">
-			</div>
-
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
 					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
-						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-						Pellentesque habitant</p>
+					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
 
 					<ul class="list-unstyled custom-social">
-						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat Shop.</strong></li>
+
 					</ul>
 				</div>
-
 				<div class="col-lg-8">
 					<div class="row links-wrap">
 						<div class="col-6 col-sm-6 col-md-3">
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
 							<ul class="list-unstyled">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact us</a></li>
+								<li><a href="index.php">หน้าเเรก</a></li>
+								<li><a href="shop.php">สินค้า</a></li>
 							</ul>
 						</div>
 
 						<div class="col-6 col-sm-6 col-md-3">
 							<ul class="list-unstyled">
-								<li><a href="#">Support</a></li>
-								<li><a href="#">Knowledge base</a></li>
-								<li><a href="#">Live chat</a></li>
+								<li><a href="blog.php">บทความ</a></li>
+								<li><a href="about.php">เกี่ยวกับเรา</a></li>
+								<li><a href="contact.php">ติดต่อเรา</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 			<div class="border-top copyright">
 				<div class="row pt-4">
-					<div class="col-lg-6">
-						<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
-								document.write(new Date().getFullYear());
-							</script>. All Rights Reserved. &mdash; Designed with love by <a
-								href="https://untree.co">Untree.co</a> Distributed By <a
-								hreff="https://themewagon.com">ThemeWagon</a>
-							<!-- License information: https://untree.co/license/ -->
-						</p>
-					</div>
-
-					<div class="col-lg-6 text-center text-lg-end">
+					<div>
 						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+							<li class="me-4">เว็บไซต์นี้เป็นส่วนหนึ่งของวิชาโครงงานเทคโนโลยีสารสนเทศและการสื่อสาร</li>
+							<li class="me-4">มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา </li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
 	</footer>
 	<!-- End Footer Section -->

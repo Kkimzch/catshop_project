@@ -145,7 +145,7 @@ a {
 	.intro-excerpt {
 		
 		position: relative;
-		z-index: 4;
+		
 		@media (min-width: $lg) {
 			max-width: 450px;
 		}
@@ -764,7 +764,7 @@ a {
 
 
 .untree_co-section {
-	padding: 7rem 0;
+	padding: 2rem 0;
 }
 
 
