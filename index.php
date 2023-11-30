@@ -1,14 +1,11 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
 <!doctype html>
 <html lang="en">
 
 <head>
+	<?php
+	require("database.php")
+	
+	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Untree.co">
@@ -28,20 +25,20 @@
 <body>
 
 	<!-- Start Header/Navigation -->
-	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
 
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Cat Shop<span>.</span></a>
+			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
-				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
+				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarsFurni">
+			<div class="collapse navbar-collapse" id="navbarsCat Shop">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item active">
-						<a class="nav-link" href="index.html">หน้าเเรก</a>
+						<a class="nav-link" href="index.php">หน้าเเรก</a>
 					</li>
 					<li><a class="nav-link" href="shop.html">สินค้า</a></li>
 					<li><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
@@ -50,7 +47,17 @@
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+
+					<li>
+						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
+						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="#">ชื่อ User</a>
+							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">ออกจากระบบ</a>
+						</div>
+					</li>
 					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
 				</ul>
 			</div>
@@ -65,8 +72,10 @@
 			<div class="row justify-content-between">
 				<div class="col-lg-5">
 					<div class="intro-excerpt">
-						<h1>Cat Shop !! <p clsas="d-block">ยินดีต้อนรับ</p></h1>
-						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
+						<h1>Cat Shop !! <p clsas="d-block">ยินดีต้อนรับ</p>
+						</h1>
+						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
+							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
 						<p><a href="" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
 					</div>
 				</div>
@@ -88,7 +97,6 @@
 					<h2 class="section-title">หมวดหมู่</h2>
 				</div>
 			</div>
-
 			<div class="row justify-content-center">
 				<div class="col-lg-12">
 					<div class="testimonial-slider-wrap text-center">
@@ -99,51 +107,26 @@
 						</div>
 
 						<div class="testimonial-slider" data-ride="carousel">
+							<?php
+      								$sql = "SELECT * FROM `type` WHERE 1";
+     								 $result = mysqli_query($conn, $sql);
+     								 while ($row = $result->fetch_assoc()) {
+
+     								 ?>
 
 							<div class="item">
 								<div class="row justify-content-center">
 									<div class="col-lg-8 mx-auto">
 										<div class="testimonial-block text-center">
-											<a href="" class="btn btn-secondary me-2">อาหารชนิดเม็ด</a>
+											<a href="" class="btn btn-secondary me-2"><?= $row['type_name'] ?></a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- END item -->
-
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-										<div class="testimonial-block text-center">
-											<a href="" class="btn btn-secondary me-2">อาหารเปียก</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-										<div class="testimonial-block text-center">
-											<a href="" class="btn btn-secondary me-2">อาหารแมวสูงวัย</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-										<div class="testimonial-block text-center">
-											<a href="" class="btn btn-secondary me-2">ขนม</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
+							<?php
+      							}
+     						 ?>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -165,16 +148,13 @@
 				</div>
 				<!-- End Column 1 -->
 				<div class="col-md-12 col-lg-9 mb-5 mb-lg-0">
-
-					<!-- ÷\ -->
 					<div class="row mb-4">
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
+							<a class="product-item" href="product_detail.php">
 								<img src="images/product1.1.png" style="width: 216px; height: auto;">
 								<h3 class="product-title mt-3">Nordic Chair</h3>
 								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
+								<span href="cart.html" class="icon-cross">
 									<img src="images/cross.svg" class="img-fluid">
 								</span>
 							</a>
@@ -206,7 +186,7 @@
 					<div class="row">
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
 							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
+								<img src="images/person_2.jpg" style="width: 216px; height: auto;">
 								<h3 class="product-title mt-3">Nordic Chair</h3>
 								<strong class="product-price">$50.00</strong>
 
@@ -239,7 +219,7 @@
 						</div>
 					</div>
 					<!--  -->
-					
+
 				</div>
 				<a href="#" class="more mt-5" align="end">ดูสินค้าทั้งหมด</a>
 			</div>
@@ -352,7 +332,7 @@
 						<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image"
 								class="img-fluid"></a>
 						<div class="post-content-entry">
-							<h3><a href="#">First Time Home Owner Ideas</a></h3>
+							<h3><a href="#">First Time หน้าเเรก Owner Ideas</a></h3>
 							<div class="meta">
 								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19,
 										2021</a></span>
@@ -366,7 +346,7 @@
 						<a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image"
 								class="img-fluid"></a>
 						<div class="post-content-entry">
-							<h3><a href="#">How To Keep Your Furniture Clean</a></h3>
+							<h3><a href="#">How To Keep Your Cat Shopture Clean</a></h3>
 							<div class="meta">
 								<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
 							</div>
@@ -379,7 +359,7 @@
 						<a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image"
 								class="img-fluid"></a>
 						<div class="post-content-entry">
-							<h3><a href="#">Small Space Furniture Apartment Ideas</a></h3>
+							<h3><a href="#">Small Space Cat Shopture Apartment Ideas</a></h3>
 							<div class="meta">
 								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12,
 										2021</a></span>
@@ -403,7 +383,7 @@
 
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Furni<span>.</span></a></div>
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
 					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
 						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
 						Pellentesque habitant</p>
@@ -468,5 +448,14 @@
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
 
 </html>
