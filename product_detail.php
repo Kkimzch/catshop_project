@@ -89,14 +89,16 @@
 	<div class="untree_co-section product-section before-footer-section">
 		<div class="container">
 			<nav aria-label="breadcrumb">
-					<?php
+				<?php
       				$sql2 = "SELECT * FROM `type` WHERE type_id=" . $typeid . "";
      				$result2 = mysqli_query($conn, $sql2);
      				$row2 = $result2->fetch_assoc();
     				?>
 				<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a class="text-decoration-none" href="shop.php">สินค้า</a></li>
-					<li class="breadcrumb-item"><a class="text-decoration-none" href="shop_type.php?id=<?php echo $row2['type_id'] ?>&&type=<?php echo $row2['type_name'] ?>"><?= $row2['type_name'] ?></a></li>
+					<li class="breadcrumb-item"><a class="text-decoration-none" href="shop.php">สินค้า</a></li>
+					<li class="breadcrumb-item"><a class="text-decoration-none"
+							href="shop_type.php?id=<?php echo $row2['type_id'] ?>&&type=<?php echo $row2['type_name'] ?>"><?= $row2['type_name'] ?></a>
+					</li>
 					<li class="breadcrumb-item active" aria-current="page"><?= $row['name'] ?></li>
 				</ol>
 			</nav>
@@ -120,33 +122,35 @@
 
 					</div>
 					<div align="center">
-						<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'"><img
+						<button class="btn btn-black btn-lg py-3 btn-block"
+							onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'"><img
 								src="images/cart.svg" class="mx-3">เพิ่มใส่ตะกร้า</button>
 					</div>
 				</div>
 			</div>
 			<h5>สินค้าเเนะนำ</h5>
 			<div class="row mb-4">
-						<?php
+				<?php
       					$sql2 = "SELECT * FROM `product` ORDER BY RAND()
 					  	LIMIT 4;";
      					$result2 = mysqli_query($conn, $sql2);
      					while ($row2 = $result2->fetch_assoc()) {
      					?>
-						<div class="col-12 col-md-3 col-lg-3 mb-5 mb-md-0">
-							<a class="product-item my-3" href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
-								<img src="images/product/<?= $row2['img'] ?>" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3"><?= $row2['name'] ?></h3>
-								<strong class="product-price">฿<?= $row2['price'] ?></strong>
-								<span href="cart.php" class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
-						<?php
+				<div class="col-12 col-md-3 col-lg-3 mb-5 mb-md-0">
+					<a class="product-item my-3"
+						href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
+						<img src="images/product/<?= $row2['img'] ?>" style="width: 216px; height: auto;">
+						<h3 class="product-title mt-3"><?= $row2['name'] ?></h3>
+						<strong class="product-price">฿<?= $row2['price'] ?></strong>
+						<span href="cart.php" class="icon-cross">
+							<img src="images/cross.svg" class="img-fluid">
+						</span>
+					</a>
+				</div>
+				<?php
       					}
      					?>
-					</div>
+			</div>
 		</div>
 	</div>
 
@@ -229,6 +233,16 @@
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
+   <!-- Modal เเสดงภาพ -->
 	<style>
 		#myImg {
 			border-radius: 5px;

@@ -29,7 +29,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="css/tiny-slider.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  <title>Cat Shop Free Bootstrap 5 Template for Cat Shopture and Interior Design Websites by Untree.co </title>
+  <title>ตะกร้าสินค้า</title>
 </head>
 
 <body>
@@ -51,15 +51,25 @@
             <a class="nav-link" href="index.php">หน้าเเรก</a>
           </li>
           <li><a class="nav-link" href="shop.php">สินค้า</a></li>
-          <li><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+          <li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
 
-          <li><a class="nav-link" href="blog.html">บทความ</a></li>
-          <li><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+          <li><a class="nav-link" href="blog.php">บทความ</a></li>
+          <li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
         </ul>
 
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-          <li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-          <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+          <li>
+            <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false"><img src="images/user.svg"></a>
+            <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+                <?php echo $_SESSION['last_name'];?></a>
+              <a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
+            </div>
+          </li>
+          <li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
         </ul>
       </div>
     </div>
@@ -89,23 +99,23 @@
   <div class="untree_co-section before-footer-section">
     <div class="container">
       <div class="row mb-5">
-        <form class="col-md-12" method="post">
-          <div class="site-blocks-table">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th class="col col-lg-3 col-md-3 product-thumbnail">รูปภาพ</th>
-                  <th class="col col-lg-3 col-md-3 product-name">สินค้า</th>
-                  <th class="col col-lg-1 col-md-3 product-price">ราคา</th>
-                  <th class="col col-lg-2 col-md-3 product-quantity">จำนวน</th>
-                  <th class="col col-lg-2 col-md-3 product-total">ราคารวม</th>
-                  <th class="col col-lg-1 col-md-3 product-remove">ลบ</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
+        <div class="site-blocks-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="col col-lg-3 col-md-3 product-thumbnail">รูปภาพ</th>
+                <th class="col col-lg-3 col-md-3 product-name">สินค้า</th>
+                <th class="col col-lg-1 col-md-3 product-price">ราคา</th>
+                <th class="col col-lg-2 col-md-3 product-quantity">จำนวน</th>
+                <th class="col col-lg-2 col-md-3 product-total">ราคารวม</th>
+                <th class="col col-lg-1 col-md-3 product-remove">ลบ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
                $total = 0;
                $somPrice = 0;
+               $someWeight = 0;
                if (isset($_SESSION["cartRow"])) {
                   for ($i = 0; $i <= (int)$_SESSION['cartRow']; $i++) {
                      if (($_SESSION['strMenuID'][$i]) != "") {
@@ -116,53 +126,57 @@
                         $_SESSION["price"] = $row['price'];
                         $total = $_SESSION["strQty"][$i];
                         $sum = (int)$total * (int)$row['price'];
+                        $weight = (int)$total * (int)$row['weight'];
 
                         $somPrice = $somPrice + $sum;
+                        $someWeight = $someWeight + $weight;
+
                ?>
-                <tr>
-                  <td class="product-thumbnail col col-lg-3 col-md-3">
-                    <img src="images/product/<?php echo $row['img']?>" alt="Image" style="height: 150px;">
-                  </td>
-                  <td class="product-name col col-lg-3 col-md-3 product-name">
-                    <h2 class="h5 text-black"><?php echo $row['name']?></h2>
-                  </td>
-                  <td class="col col-lg-1 col-md-3">฿<?php echo $row['price']?></td>
-                  <td class="col col-lg-2 col-md-3 product-quantity">
-                    <div class="d-flex justify-content-center">
-                      <div class="quantity-container d-flex" style="max-width: 120px;">
-                        <?php
+              <tr>
+                <td class="product-thumbnail col col-lg-3 col-md-3">
+                  <img src="images/product/<?php echo $row['img']?>" alt="Image" style="height: 150px;">
+                </td>
+                <td class="product-name col col-lg-3 col-md-3 product-name">
+                  <h2 class="h5 text-black"><?php echo $row['name']?></h2>
+                </td>
+                <td class="col col-lg-1 col-md-3">฿<?php echo $row['price']?></td>
+                <td class="col col-lg-2 col-md-3 product-quantity">
+                  <div class="d-flex justify-content-center">
+                    <div class="quantity-container d-flex" style="max-width: 120px;">
+                      <?php
                                  if ($_SESSION["strQty"][$i] > 1) {
                                  ?>
-                        <div class="input-group-prepend">
-                          <button class="btn btn-outline-black decrease" type="button" onclick="window.location='cart_dash.php?product_id=<?php echo $row['product_id'] ?>'">&minus;</button>
-                        </div>
-                        <?php
+                      <div class="input-group-prepend">
+                        <button class="btn btn-outline-black decrease" type="button"
+                          onclick="window.location='cart_dash.php?product_id=<?php echo $row['product_id'] ?>'">&minus;</button>
+                      </div>
+                      <?php
                         }
                       ?>
-                        <p class="mx-3 p-0 m-0"><?php echo $_SESSION["strQty"][$i]; ?></p>
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-black increase" type="button" onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'" >&plus;</button>
-                        </div>
+                      <p class="mx-3 p-0 m-0"><?php echo $_SESSION["strQty"][$i]; ?></p>
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-black increase" type="button"
+                          onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'">&plus;</button>
                       </div>
                     </div>
+                  </div>
 
-                  </td>
-                  <td>฿<?php echo $sum; ?></td>
-                  <td><a href="cart_delete.php?Line=<?php echo $i; ?>" class="btn btn-black btn-sm">X</a></td>
-                </tr>
-                <?php
+                </td>
+                <td>฿<?php echo $sum; ?></td>
+                <td><a href="cart_delete.php?Line=<?php echo $i; ?>" class="btn btn-black btn-sm">X</a></td>
+              </tr>
+              <?php
                      }
                   }
                   ?>
-                <?php
+              <?php
                } else {
                   echo "<p class='text-center'>คุณยังไม่ได้เลือกรายการ</p>";
                }
                ?>
-              </tbody>
-            </table>
-          </div>
-        </form>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="row m-1">
@@ -186,10 +200,24 @@
               </div>
               <div class="row mb-3">
                 <div class="col-md-6">
-                  <span class="text-black">ค่าจัดส่ง</span>
+                  <span class="text-black">ค่าจัดส่ง <?php echo $someWeight;?></span>
                 </div>
                 <div class="col-md-6 text-end">
-                  <span class="text-black">฿230.00</span>
+                  <!-- คำนวนค่าส่ง -->
+                  <?php
+                  $totalPrice = 0;
+                  $shipping = 0;
+                  $sql2 = "SELECT * FROM `shipping`";
+                  $result2 = $conn->query($sql2);
+                  while ($row2 = $result2->fetch_assoc()) {
+                 
+                  if($someWeight > $row2['weight']){
+                    $shipping = $row2['shipping_cost'];
+                    $totalPrice = $somPrice + $shipping;
+                  }
+                }
+                  ?>
+                  <span class="text-black">฿<?php echo $shipping; ?></span>
                 </div>
               </div>
               <div class="row mb-3">
@@ -197,12 +225,12 @@
                   <strong class="text-primary">ราคาสุทธิ</strong>
                 </div>
                 <div class="col-md-6 text-end">
-                  <strong class="text-primary">฿230.00</strong>
+                  <strong class="text-primary">฿<?php echo $totalPrice; ?></strong>
                 </div>
               </div>
               <div class="row">
                 <button class="btn btn-black btn-lg py-6 btn-block"
-                  onclick="window.location='checkout.html'">ดำเนินการต่อ</button>
+                  onclick="window.location='checkout.php'">ดำเนินการต่อ</button>
               </div>
             </div>
           </div>
@@ -270,7 +298,20 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/tiny-slider.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
