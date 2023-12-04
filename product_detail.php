@@ -120,7 +120,7 @@
 
 					</div>
 					<div align="center">
-						<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='cart.html'"><img
+						<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'"><img
 								src="images/cart.svg" class="mx-3">เพิ่มใส่ตะกร้า</button>
 					</div>
 				</div>

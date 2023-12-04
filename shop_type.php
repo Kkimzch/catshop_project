@@ -3,7 +3,13 @@
 
 <head>
 	<?php
-	require("database.php")
+	require("database.php");
+	session_start();
+
+	 if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['email']);
+	 }
 	
 	?>
 	<meta charset="utf-8">
@@ -47,8 +53,29 @@
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+					<?php
+						if (isset($_SESSION['email'])) { 
+						?>
+					<li>
+						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
+						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>   <?php echo $_SESSION['last_name'];?></a>
+							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
+						</div>
+					</li>
 					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					<?php
+						}else{
+							?>
+					<li class="btn btn-secondary p-1 px-4">
+						<a href="Backoffice/login.php" class=" text-white p-2 px-3 text-decoration-none">เข้าสู่ระบบ</a>
+					</li>
+					<?php
+						}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -82,7 +109,7 @@
 		<div class="pt-4" style="overflow: auto;
 		white-space: nowrap;">
 			<a href="shop.php" class="m-0 text-decoration-none">
-				<div class="col-lg-2 btn btn-secondary btn-block m-2">
+				<div class="col-lg-2 btn btn-secondary btn-block m-2 text-white">
 					สินค้าทั้งหมด
 				</div>
 			</a>
@@ -94,7 +121,7 @@
      								 ?>
 			<a href="shop_type.php?id=<?php echo $row['type_id'] ?>&&type=<?php echo $row['type_name'] ?>"
 				class="text-decoration-none m-0">
-				<div class="col-lg-2 btn btn-secondary btn-block m-2">
+				<div class="col-lg-2 btn btn-secondary btn-block m-2 text-white">
 					<?= $row['type_name'] ?>
 				</div>
 			</a>

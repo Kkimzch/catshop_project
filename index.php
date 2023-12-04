@@ -3,8 +3,13 @@
 
 <head>
 	<?php
-	require("database.php")
-	
+	require("database.php");
+	session_start();
+
+	 if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['email']);
+	 }
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,18 +52,29 @@
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-
+					<?php
+						if (isset($_SESSION['email'])) { 
+						?>
 					<li>
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">ชื่อ User</a>
+							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>   <?php echo $_SESSION['last_name'];?></a>
 							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">ออกจากระบบ</a>
+							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
 					</li>
 					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					<?php
+						}else{
+							?>
+					<li class="btn btn-secondary p-1 px-4">
+						<a href="Backoffice/login.php" class=" text-white p-2 px-3 text-decoration-none">เข้าสู่ระบบ</a>
+					</li>
+					<?php
+						}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -76,12 +92,12 @@
 						</h1>
 						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
 							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
-						<p><a href="shop.php" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
+						<p><a href="shop.php" class="btn btn-secondary me-2 text-white">เลือกซื้อเลย</a></p>
 					</div>
 				</div>
 				<div class="col-lg-7">
 					<div class="hero-img-wrap">
-						<img src="images/couch1.png" class="img-fluid">
+						<img src="images/cat.png" class="img-fluid">
 					</div>
 				</div>
 			</div>
@@ -118,7 +134,8 @@
 								<div class="row justify-content-center">
 									<div class="col-lg-8 mx-auto">
 										<div class="testimonial-block text-center">
-											<a href="shop_type.php?id=<?php echo $row['type_id'] ?>&&type=<?php echo $row['type_name'] ?>" class="btn btn-secondary me-2"><?= $row['type_name'] ?></a>
+											<a href="shop_type.php?id=<?php echo $row['type_id'] ?>&&type=<?php echo $row['type_name'] ?>"
+												class="btn btn-secondary me-2 text-white"><?= $row['type_name'] ?></a>
 										</div>
 									</div>
 								</div>
@@ -156,7 +173,8 @@
      					while ($row2 = $result2->fetch_assoc()) {
      					?>
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item my-3" href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
+							<a class="product-item my-3"
+								href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
 								<img src="images/product/<?= $row2['img'] ?>" style="width: 216px; height: auto;">
 								<h3 class="product-title mt-3"><?= $row2['name'] ?></h3>
 								<strong class="product-price">฿<?= $row2['price'] ?></strong>
