@@ -98,7 +98,7 @@
 
 	<div class="">
 		<div class="container">
-			<form class="user" method="POST" action="cart_insert.php">
+			<form class="user" method="POST" action="cart_insert.php" enctype="multipart/form-data">
 				<div class="row">
 
 					<div class="col-md-6 mt-5">
@@ -113,11 +113,11 @@
 										</thead>
 										<tbody>
 											<?php
-										$total = 0;
-										$somPrice = 0;
-										$someWeight = 0;
-										if (isset($_SESSION["cartRow"])) {
-										   for ($i = 0; $i <= (int)$_SESSION['cartRow']; $i++) {
+										$total = 0; //จำนวน
+										$somePrice = 0; //ราคารวมสินค้า
+										$someWeight = 0; //รสมน้ำหนัก
+										if (isset($_SESSION["intLine"])) {
+										   for ($i = 0; $i <= (int)$_SESSION['intLine']; $i++) {
 											  if (($_SESSION['strMenuID'][$i]) != "") {
 												 $sql = "SELECT * FROM `product` WHERE product_id='" . $_SESSION["strMenuID"][$i] . "' ";
 												 $result = $conn->query($sql);
@@ -128,7 +128,7 @@
 												 $sum = (int)$total * (int)$row['price'];
 												 $weight = (int)$total * (int)$row['weight'];
 						 
-												 $somPrice = $somPrice + $sum;
+												 $somePrice = $somePrice + $sum;
 												 $someWeight = $someWeight + $weight;
 						 
 										?>
@@ -154,7 +154,7 @@
 												<div class="text-dark">ราคาสินค้า</div>
 											</div>
 											<div>
-												<div class="text-dark">฿<?php echo $somPrice; ?></div>
+												<div class="text-dark">฿<?php echo $somePrice; ?></div>
 											</div>
 										</div>
 										<div class="d-flex justify-content-between">
@@ -168,7 +168,7 @@
 												
 												if($someWeight > $row2['weight']){
 													$shipping = $row2['shipping_cost'];
-													$totalPrice = $somPrice + $shipping;
+													$totalPrice = $somePrice + $shipping;
 												}
 												}
                  							 ?>
@@ -181,6 +181,12 @@
 											</div>
 										</div>
 									</div>
+									<!-- สร้าง session -->
+									<?php
+									$_SESSION['somePrice'] = $somePrice;
+									$_SESSION['shipping'] = $shipping;
+									$_SESSION['totalPrice'] = $totalPrice;
+									?>
 									<hr>
 									<!-- ช่องทางการชำระเงิน -->
 									<div class="mt-3">
@@ -277,9 +283,9 @@
 									<input type="text" class="form-control" id="c_province" name="c_province" required>
 								</div>
 								<div class="col-md-6">
-									<label for="c_code" class="text-black">รหัสไปรษณีย์<span
+									<label for="c_post" class="text-black">รหัสไปรษณีย์<span
 											class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="c_code" name="c_code" required>
+									<input type="text" class="form-control" id="c_post" name="c_post" required>
 								</div>
 							</div>
 							<div class="form-group row mt-3">

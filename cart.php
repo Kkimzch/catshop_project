@@ -117,8 +117,8 @@
                $total = 0;
                $somPrice = 0;
                $someWeight = 0;
-               if (isset($_SESSION["cartRow"])) {
-                  for ($i = 0; $i <= (int)$_SESSION['cartRow']; $i++) {
+               if (isset($_SESSION["intLine"])) {
+                  for ($i = 0; $i <= (int)$_SESSION['intLine']; $i++) {
                      if (($_SESSION['strMenuID'][$i]) != "") {
                         $sql = "SELECT * FROM `product` WHERE product_id='" . $_SESSION["strMenuID"][$i] . "' ";
                         $result = $conn->query($sql);

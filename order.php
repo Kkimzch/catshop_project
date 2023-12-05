@@ -2,11 +2,11 @@
 require("database.php");
 session_start();
 
-if (!isset($_SESSION["cartRow"]))    //เช็คว่าแถวเป็นค่าว่างมั๊ย ถ้าว่างให้ทำงานใน {}
+if (!isset($_SESSION["intLine"]))    //เช็คว่าแถวเป็นค่าว่างมั๊ย ถ้าว่างให้ทำงานใน {}
 {
-	$_SESSION["cartRow"] = 0;
+	$_SESSION["intLine"] = 0;
 	$_SESSION["strMenuID"][0] = $_GET["product_id"];   //รหัสสินค้า
-	$_SESSION["strQty"][0] = 1; //จำนวนสินค้า
+	$_SESSION["strQty"][0] = 1;
 	header("location:cart.php");
 } else {
 	$product_id = $_GET["product_id"];
@@ -17,8 +17,8 @@ if (!isset($_SESSION["cartRow"]))    //เช็คว่าแถวเป็�
 	if ((string)$key != "") {
 		$_SESSION["strQty"][$key] = $_SESSION["strQty"][$key] + 1;
 	} else {
-		$_SESSION["cartRow"] = $_SESSION["cartRow"] + 1;
-		$intNewLine = $_SESSION["cartRow"];
+		$_SESSION["intLine"] = $_SESSION["intLine"] + 1;
+		$intNewLine = $_SESSION["intLine"];
 		$_SESSION["strMenuID"][$intNewLine] = $_GET["product_id"];
 		$_SESSION["strQty"][$intNewLine] = 1;
 	}
