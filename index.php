@@ -291,52 +291,32 @@
 					<h2 class="section-title">บทความน่าสนใจ</h2>
 				</div>
 				<div class="col-md-6 text-start text-md-end">
-					<a href="#" class="more">อ่านบทความทั้งหมด</a>
+					<a href="blog.php" class="more">อ่านบทความทั้งหมด</a>
 				</div>
 			</div>
 
 			<div class="row">
-
+				<?php
+      					$sql3 = "SELECT * FROM `blog` ORDER BY RAND()
+					  	LIMIT 3;";
+     					$result3 = mysqli_query($conn, $sql3);
+     					while ($row3 = $result3->fetch_assoc()) {
+     					?>
 				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image"
+						<a href="blog_detail.php?blog_id=<?php echo $row3['blog_id'];?>" class="post-thumbnail"><img src="images/blog/<?php echo $row3['img'];?>" alt="Image"
 								class="img-fluid"></a>
 						<div class="post-content-entry">
-							<h3><a href="#">First Time หน้าเเรก Owner Ideas</a></h3>
+							<h3><a href="blog_detail.php?blog_id=<?php echo $row3['blog_id'];?>"><?php echo $row3['blog_title'];?></a></h3>
 							<div class="meta">
-								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19,
-										2021</a></span>
+								<span>by <?php echo $row3['name'];?></span>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image"
-								class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">How To Keep Your Cat Shopture Clean</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image"
-								class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">Small Space Cat Shopture Apartment Ideas</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12,
-										2021</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php
+						}
+				?>
 
 			</div>
 		</div>
