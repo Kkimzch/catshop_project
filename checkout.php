@@ -187,28 +187,35 @@
 										<strong class="text-dark">ช่องทางการชำระเงิน</strong>
 										<p class="text-dark">&nbsp; &nbsp; &nbsp;กรุณาชำระเงินจำนวน
 											฿<?php echo $totalPrice; ?>
-											ตามช่องทางการชำระเงินด้านล่าง พร้อมอัพโหลดหลักฐานการชำระเงิน</p>
+											ตามช่องทางการชำระเงินด้านล่าง พร้อมอัพโหลดหลักฐานการชำระเงิน
+										</p>
+										<?php
+										$sql3 = "SELECT * FROM `payment`";
+										$result3 = $conn->query($sql3);
+										$row3 = $result3->fetch_assoc();
+
+										?>
 										<div class="d-flex justify-content-between text-black">
 											<p class="m-0">
 												ชื่อบัญชี
 											</p>
 											<p class="m-0">
-												CatShop.
+											<?php echo $row3['account_name']; ?>
 											</p>
 										</div>
 										<div class="d-flex justify-content-between text-black">
 											<p class="m-0">
-												ธนาคารกรุงไทย
+												ธนาคาร<?php echo $row3['bank_name']; ?>
 											</p>
 											<div class="d-flex align-items-center">
-												9384756383
+											<?php echo $row3['account_number']; ?>
 											</div>
 										</div>
 										<div class="d-flex justify-content-between text-black">
 											<p class="m-0">
 												พร้อมเพย์
 											</p>
-											<div class="d-flex align-items-center">9384756383
+											<div class="d-flex align-items-center"><?php echo $row3['PromptPay']; ?>
 											</div>
 										</div>
 										<img src="images/8402.jpg" class="img-fluid mt-2">
