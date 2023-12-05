@@ -43,11 +43,11 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">ลืมรหัสผ่าน</h1>
                                     </div>
-                                    <form class="user mt-3">
+                                    <form class="user mt-3" action="forget_db.php" method="GET">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="อีเมล" required>
+                                                placeholder="อีเมล" name="email" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
@@ -60,14 +60,14 @@
                                                     placeholder="ยืนยันรหัสผ่าน" required>
                                             <span class="pl-3 small" id="password_error"style="color: red;"></span>
                                         </div>
-                                        <button type="submit "
+                                        <button type="submit"
                                         class="btn btn-primary btn-user btn-block">เปลี่ยนรหัสผ่าน</button>
                                     </form>
                                     <div class="text-center mt-2">
-                                        <a class="small" href="register.html">สมัครสมาชิก !</a>
+                                        <a class="small" href="register.php">สมัครสมาชิก !</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="login.html">เป็นสมาชิกอยู่เเล้ว ? เข้าสู่ระบบ !</a>
+                                        <a class="small" href="login.php">เป็นสมาชิกอยู่เเล้ว ? เข้าสู่ระบบ !</a>
                                     </div>
                                 </div>
                             </div>
