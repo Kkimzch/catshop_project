@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -100,32 +99,26 @@
 	<!-- Start Contact Form -->
 	<div class="untree_co-section">
 		<div class="container">
-
 			<div class="block">
 				<div class="row justify-content-center">
-
-
-					<div class="col-md-8 col-lg-8 pb-4">
-
-
-						<div class="row mb-5">
-							<div class="col-lg-4">
-								<div class="service no-shadow align-items-center link horizontal d-flex active"
-									data-aos="fade-left" data-aos-delay="0">
-									<div class="service-icon color-1 mb-4">
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-											fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-											<path
-												d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-										</svg>
-									</div> <!-- /.icon -->
-									<div class="service-contents">
-										<p>1061 ซ. อิสรภาพ 15 แขวง หิรัญรูจี เขตธนบุรี กรุงเทพมหานคร 10600</p>
-									</div> <!-- /.service-contents-->
-								</div> <!-- /.service -->
-							</div>
-
-							<div class="col-lg-4">
+					<div class="col col-lg-6">
+						<div class="col-lg-12">
+							<div class="service no-shadow align-items-center link horizontal d-flex active"
+								data-aos="fade-left" data-aos-delay="0">
+								<div class="service-icon color-1 mb-4">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+										<path
+											d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+									</svg>
+								</div> <!-- /.icon -->
+								<div class="service-contents">
+									<p>1061 ซ. อิสรภาพ 15 แขวง หิรัญรูจี เขตธนบุรี กรุงเทพมหานคร 10600</p>
+								</div> <!-- /.service-contents-->
+							</div> <!-- /.service -->
+						</div>
+						<div class="row mb-0">
+							<div class="col-lg-6">
 								<div class="service no-shadow align-items-center link horizontal d-flex active"
 									data-aos="fade-left" data-aos-delay="0">
 									<div class="service-icon color-1 mb-4">
@@ -141,7 +134,7 @@
 								</div> <!-- /.service -->
 							</div>
 
-							<div class="col-lg-4">
+							<div class="col-lg-6">
 								<div class="service no-shadow align-items-center link horizontal d-flex active"
 									data-aos="fade-left" data-aos-delay="0">
 									<div class="service-icon color-1 mb-4">
@@ -157,7 +150,11 @@
 								</div> <!-- /.service -->
 							</div>
 						</div>
-
+						<div>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7721741060855!2d100.4862268750899!3d13.73223863665757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298fe8dcd0d13%3A0x8166225c8081ce3a!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lia4LmJ4Liy4LiZ4Liq4Lih4LmA4LiU4LmH4LiI4LmA4LiI4LmJ4Liy4Lie4Lij4Liw4Lii4Liy!5e0!3m2!1sth!2sth!4v1701795839884!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
+					</div>
+					<div class="col col-lg-6">
 						<form action="contact_db.php" method="post">
 							<div class="row">
 								<div class="col-6">
@@ -184,23 +181,18 @@
 
 							<div class="form-group mb-5 mt-2">
 								<label class="text-black" for="message">ข้อความ</label>
-								<textarea name="message" class="form-control" id="message" cols="30" rows="5" required></textarea>
+								<textarea name="message" class="form-control" id="message" cols="30" rows="5"
+									required></textarea>
 							</div>
 
 							<button type="submit" class="btn btn-primary-hover-outline">ยืนยัน</button>
 						</form>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
-
-
 	</div>
-	</div>
+
 
 	<!-- End Contact Form -->
 
