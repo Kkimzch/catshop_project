@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="row justify-content-end">
-                                                <a class="small pr-3 text-gray-600" href="forgot-password.html">ลืมรหัสผ่าน ?</a>
+                                                <a class="small pr-3 text-gray-600" href="forgot-password.php">ลืมรหัสผ่าน ?</a>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">เข้าสู่ระบบ</button>

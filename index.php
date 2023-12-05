@@ -3,13 +3,18 @@
 
 <head>
 	<?php
-	require("database.php")
-	
+	require("database.php");
+	session_start();
+
+	 if (isset($_GET['logout'])) {
+		session_destroy();
+		unset($_SESSION['email']);
+	 }
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="shortcut icon" href="cat-icon.png">
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap4" />
@@ -40,25 +45,37 @@
 					<li class="nav-item active">
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
 					</li>
-					<li><a class="nav-link" href="shop.html">สินค้า</a></li>
-					<li><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
-					<li><a class="nav-link" href="blog.html">บทความ</a></li>
-					<li><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+					<li><a class="nav-link" href="shop.php">สินค้า</a></li>
+					<li><a class="nav-link" href="blog.php">บทความ</a></li>
+					<li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
+					<li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-
+					<?php
+						if (isset($_SESSION['email'])) { 
+						?>
 					<li>
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">ชื่อ User</a>
+							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+								<?php echo $_SESSION['last_name'];?></a>
 							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">ออกจากระบบ</a>
+							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
 					</li>
-					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					<li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
+					<?php
+						}else{
+							?>
+					<li class="btn btn-secondary p-1 px-4">
+						<a href="Backoffice/login.php" class=" text-white p-2 px-3 text-decoration-none">เข้าสู่ระบบ</a>
+					</li>
+					<?php
+						}
+					?>
 				</ul>
 			</div>
 		</div>
@@ -76,12 +93,12 @@
 						</h1>
 						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
 							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
-						<p><a href="" class="btn btn-secondary me-2">เลือกซื้อเลย</a></p>
+						<p><a href="shop.php" class="btn btn-secondary me-2 text-white">เลือกซื้อเลย</a></p>
 					</div>
 				</div>
 				<div class="col-lg-7">
 					<div class="hero-img-wrap">
-						<img src="images/couch1.png" class="img-fluid">
+						<img src="images/cat.png" class="img-fluid">
 					</div>
 				</div>
 			</div>
@@ -118,7 +135,8 @@
 								<div class="row justify-content-center">
 									<div class="col-lg-8 mx-auto">
 										<div class="testimonial-block text-center">
-											<a href="" class="btn btn-secondary me-2"><?= $row['type_name'] ?></a>
+											<a href="shop_type.php?id=<?php echo $row['type_id'] ?>&&type=<?php echo $row['type_name'] ?>"
+												class="btn btn-secondary me-2 text-white"><?= $row['type_name'] ?></a>
 										</div>
 									</div>
 								</div>
@@ -144,84 +162,36 @@
 					<h2 class="mb-4 section-title">สินค้าของเรา</h2>
 					<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
 						vulputate velit imperdiet dolor tempor tristique. </p>
-					<p><a href="shop.html" class="btn">ดูเพิ่มเติม</a></p>
+					<p><a href="shop.php" class="btn">ดูเพิ่มเติม</a></p>
 				</div>
 				<!-- End Column 1 -->
 				<div class="col-md-12 col-lg-9 mb-5 mb-lg-0">
 					<div class="row mb-4">
+						<?php
+      					$sql2 = "SELECT * FROM `product` ORDER BY RAND()
+					  	LIMIT 6;";
+     					$result2 = mysqli_query($conn, $sql2);
+     					while ($row2 = $result2->fetch_assoc()) {
+     					?>
 						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="product_detail.php">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
-								<strong class="product-price">$50.00</strong>
-								<span href="cart.html" class="icon-cross">
+							<a class="product-item my-3"
+								href="product_detail.php?id=<?php echo $row2['product_id'] ?>&&name=<?php echo $row2['name'] ?>">
+								<img src="images/product/<?= $row2['img'] ?>" style="width: 216px; height: auto;">
+								<h3 class="product-title mt-3"><?= $row2['name'] ?></h3>
+								<strong class="product-price">฿<?= $row2['price'] ?></strong>
+								<span href="cart.php" class="icon-cross">
 									<img src="images/cross.svg" class="img-fluid">
 								</span>
 							</a>
 						</div>
-						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
-								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
-						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
-								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
-								<img src="images/person_2.jpg" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic uj Chair s</h3>
-								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
-						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
-								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
-						<div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
-							<a class="product-item" href="cart.html">
-								<img src="images/product1.1.png" style="width: 216px; height: auto;">
-								<h3 class="product-title mt-3">Nordic Chair</h3>
-								<strong class="product-price">$50.00</strong>
-
-								<span class="icon-cross">
-									<img src="images/cross.svg" class="img-fluid">
-								</span>
-							</a>
-						</div>
+						<?php
+      					}
+     					?>
 					</div>
 					<!--  -->
 
 				</div>
-				<a href="#" class="more mt-5" align="end">ดูสินค้าทั้งหมด</a>
+				<a href="shop.php" class="more mt-2" align="end">ดูสินค้าทั้งหมด</a>
 			</div>
 		</div>
 	</div>
@@ -321,52 +291,32 @@
 					<h2 class="section-title">บทความน่าสนใจ</h2>
 				</div>
 				<div class="col-md-6 text-start text-md-end">
-					<a href="#" class="more">อ่านบทความทั้งหมด</a>
+					<a href="blog.php" class="more">อ่านบทความทั้งหมด</a>
 				</div>
 			</div>
 
 			<div class="row">
-
+				<?php
+      					$sql3 = "SELECT * FROM `blog` ORDER BY RAND()
+					  	LIMIT 3;";
+     					$result3 = mysqli_query($conn, $sql3);
+     					while ($row3 = $result3->fetch_assoc()) {
+     					?>
 				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
 					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-1.jpg" alt="Image"
+						<a href="blog_detail.php?blog_id=<?php echo $row3['blog_id'];?>" class="post-thumbnail"><img src="images/blog/<?php echo $row3['img'];?>" alt="Image"
 								class="img-fluid"></a>
 						<div class="post-content-entry">
-							<h3><a href="#">First Time หน้าเเรก Owner Ideas</a></h3>
+							<h3><a href="blog_detail.php?blog_id=<?php echo $row3['blog_id'];?>"><?php echo $row3['blog_title'];?></a></h3>
 							<div class="meta">
-								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 19,
-										2021</a></span>
+								<span>by <?php echo $row3['name'];?></span>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-2.jpg" alt="Image"
-								class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">How To Keep Your Cat Shopture Clean</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Robert Fox</a></span> <span>on <a href="#">Dec 15, 2021</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-					<div class="post-entry">
-						<a href="#" class="post-thumbnail"><img src="images/post-3.jpg" alt="Image"
-								class="img-fluid"></a>
-						<div class="post-content-entry">
-							<h3><a href="#">Small Space Cat Shopture Apartment Ideas</a></h3>
-							<div class="meta">
-								<span>by <a href="#">Kristin Watson</a></span> <span>on <a href="#">Dec 12,
-										2021</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php
+						}
+				?>
 
 			</div>
 		</div>
@@ -376,86 +326,70 @@
 	<!-- Start Footer Section -->
 	<footer class="footer-section">
 		<div class="container relative">
-
-			<div class="sofa-img">
-				<img src="images/sofa 1.png" alt="Image" class="img-fluid">
-			</div>
-
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
 					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus
-						malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
-						Pellentesque habitant</p>
+					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด
+						อาหารเปียก ขนม ของใช้ ของเล่น</p>
 
 					<ul class="list-unstyled custom-social">
-						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
+								Shop.</strong></li>
+
 					</ul>
 				</div>
-
 				<div class="col-lg-8">
 					<div class="row links-wrap">
 						<div class="col-6 col-sm-6 col-md-3">
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
 							<ul class="list-unstyled">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact us</a></li>
+								<li><a href="index.php">หน้าเเรก</a></li>
+								<li><a href="shop.php">สินค้า</a></li>
 							</ul>
 						</div>
 
 						<div class="col-6 col-sm-6 col-md-3">
 							<ul class="list-unstyled">
-								<li><a href="#">Support</a></li>
-								<li><a href="#">Knowledge base</a></li>
-								<li><a href="#">Live chat</a></li>
+								<li><a href="blog.php">บทความ</a></li>
+								<li><a href="about.php">เกี่ยวกับเรา</a></li>
+								<li><a href="contact.php">ติดต่อเรา</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-
 			</div>
 
 			<div class="border-top copyright">
 				<div class="row pt-4">
-					<div class="col-lg-6">
-						<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>
-								document.write(new Date().getFullYear());
-							</script>. All Rights Reserved. &mdash; Designed with love by <a
-								href="https://untree.co">Untree.co</a> Distributed By <a
-								hreff="https://themewagon.com">ThemeWagon</a>
-							<!-- License information: https://untree.co/license/ -->
-						</p>
-					</div>
-
-					<div class="col-lg-6 text-center text-lg-end">
+					<div>
 						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-							<li><a href="#">Privacy Policy</a></li>
+							<li class="me-4">เว็บไซต์นี้เป็นส่วนหนึ่งของวิชาโครงงานเทคโนโลยีสารสนเทศและการสื่อสาร</li>
+							<li class="me-4">มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา </li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
-
 		</div>
 	</footer>
 	<!-- End Footer Section -->
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-</script>
 
 </html>

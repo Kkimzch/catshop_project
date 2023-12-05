@@ -27,7 +27,7 @@ echo '
             $status = $row['status'];
             $user_id = $row['user_id'];
             if ($status === 'Admin') {
-                          header("location:404.html");
+                header("location:404.html");
                 }
              else {
                 header("location:../index.php");
