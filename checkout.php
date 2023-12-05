@@ -264,9 +264,9 @@
 									<input type="text" class="form-control" id="c_district" name="c_district" required>
 								</div>
 								<div class="col-md-6">
-									<label for="c_canton" class="text-black">เขต / อำเภอ <span
+									<label for="c_area" class="text-black">เขต / อำเภอ <span
 											class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="c_canton" name="c_canton" required>
+									<input type="text" class="form-control" id="c_area" name="c_area" required>
 								</div>
 							</div>
 
