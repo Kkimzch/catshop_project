@@ -25,7 +25,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	<link href="css/tiny-slider.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
-	<title>Cat Shop</title>
+	<title>สินค้า</title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
 					</li>
-					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					<li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
 					<?php
 						}else{
 							?>
@@ -97,7 +97,8 @@
 					</div>
 				</div>
 				<div class="col-lg-5">
-
+				<div class="hero-img-wrap">
+					</div>
 				</div>
 			</div>
 		</div>

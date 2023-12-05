@@ -21,7 +21,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
-		<title>Cat Shop Free Bootstrap 5 Template for Cat Shopture and Interior Design Websites by Untree.co </title>
+		<title>ขอบคุณสำหรับการสั่งซื้อ</title>
 	</head>
 
 	<body>

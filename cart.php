@@ -87,7 +87,8 @@
           </div>
         </div>
         <div class="col-lg-7">
-
+        <div class="hero-img-wrap">
+							</div>
         </div>
       </div>
     </div>

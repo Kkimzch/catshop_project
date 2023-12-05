@@ -30,7 +30,7 @@
 	<link href="css/tiny-slider.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-	<title>Cat Shop Free Bootstrap 5 Template for Cat Shopture and Interior Design Websites by Untree.co </title>
+	<title>ยืนยันการสั่งซื้อ</title>
 </head>
 
 <body>
@@ -82,11 +82,14 @@
 	<div class="hero">
 		<div class="container">
 			<div class="row justify-content-between">
-				<div class="col-lg-8">
-					<h1>รายละเอียดการจัดส่ง</h1>
+				<div class="col-lg-5">
+					<div class="intro-excerpt">
+						<h1>ยืนยันการสั่งซื้อ</h1>
+					</div>
 				</div>
 				<div class="col-lg-7">
-
+					<div class="hero-img-wrap">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -95,7 +98,7 @@
 
 	<div class="">
 		<div class="container">
-			<form class="user"  method="POST" action="cart_insert.php">
+			<form class="user" method="POST" action="cart_insert.php">
 				<div class="row">
 
 					<div class="col-md-6 mt-5">
