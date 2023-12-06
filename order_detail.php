@@ -165,7 +165,7 @@
                                     $sql3 = "SELECT * FROM `order_detail` WHERE order_id = '$order_id';";
                                     $result3 = mysqli_query($conn, $sql3);
                                     while ($row3 = $result3->fetch_assoc()) {
-								?>
+								    ?>
 
                                     <tr>
                                         <td><?php echo $row3['name'];?> <strong
