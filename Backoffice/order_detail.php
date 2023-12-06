@@ -154,7 +154,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col col-lg-3">
                                     <div class="d-flex justify-content-center">
@@ -163,13 +163,15 @@
                                             if($row['status'] == 'รอตรวจสอบ'){
                                          ?>
                                             <div align="center">
-                                                <a href="#" class="btn btn-success btn-icon-split mt-4">
+                                                <a href="#" data-toggle="modal" data-target="#confirmModal"
+                                                    class="btn btn-success btn-icon-split mt-4">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-check"></i>
                                                     </span>
                                                     <span class="text">ยืนยันคำสั่งซื้อ</span>
                                                 </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split mt-1">
+                                                <a href="#" class="btn btn-danger btn-icon-split mt-1"
+                                                    data-toggle="modal" data-target="#cancelModal">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
@@ -179,13 +181,18 @@
                                             <?php
                                               }elseif ($row['status'] == 'กำลังจัดเตรียม') {
                                          ?>
-                                            <form>
+                                            <form action="update-order.php" method="GET">
                                                 <div>
+                                                <input type="text" class="d-none" value="<?php echo $order_id; ?>" name="order_id">
                                                     <input type="text" class="form-control bg-light border-0 small mt-4"
-                                                        placeholder="เพิ่มเลขพัสดุ" required>
+                                                        placeholder="เพิ่มเลขพัสดุ" name="message" required>
+                                                    <input type="text"
+                                                        class="d-none form-control bg-light border-0 small mt-4"
+                                                        placeholder="เพิ่มเลขพัสดุ" name="status" value="จัดส่งเเล้ว"
+                                                        required>
                                                 </div>
                                                 <div align="center">
-                                                    <button href="#" class="btn btn-success btn-icon-split mt-2">
+                                                    <button type="submit" class="btn btn-success btn-icon-split mt-2">
                                                         <span class="icon text-white-50">
                                                             <i class="fas fa-arrow-right"></i>
                                                         </span>
@@ -226,30 +233,29 @@
                                             <td align="end">฿<?php echo $row3['total_price']; ?></td>
                                         </tr>
                                         <?php } ?>
-                                        
+
                                     </tbody>
-                                    
+
                                 </table>
                                 <div>
-                                            <div class="d-flex justify-content-between">
-                                                <div>
-                                                    <div class="text-dark">ราคาสินค้า</div>
-                                                </div>
-                                                <div>
-                                                    <div class="text-dark">฿<?php echo $row['total']; ?></div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <div>ค่าจัดส่ง</div>
-                                                <div>฿<?php echo $row['shipping']; ?></div>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <div><strong class="text-primary">ราคาสุทธิ</strong></div>
-                                                <div><strong
-                                                        class="text-primary">฿<?php echo $row['sometotal']; ?></strong>
-                                                </div>
-                                            </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <div class="text-dark">ราคาสินค้า</div>
                                         </div>
+                                        <div>
+                                            <div class="text-dark">฿<?php echo $row['total']; ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>ค่าจัดส่ง</div>
+                                        <div>฿<?php echo $row['shipping']; ?></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div><strong class="text-primary">ราคาสุทธิ</strong></div>
+                                        <div><strong class="text-primary">฿<?php echo $row['sometotal']; ?></strong>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -281,6 +287,70 @@
     <?php require('include/modal-logout.php');
     ?>
 
+    <!-- cancel mpdal -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">กรุณาระบุเหตุผลการยกเลิก</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="update-order.php" method="GET">
+                        <div class="col-auto my-1">
+                            <input type="text" class="d-none" value="ยกเลิก" name="status">
+                            <input type="text" class="d-none" value="<?php echo $order_id; ?>" name="order_id">
+                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="message" required>
+                                <option value="หลักฐานการชำระเงินไม่ถูกต้อง" selected>
+                                    หลักฐานการชำระเงินไม่ถูกต้อง</option>
+                                <option value="อยู่นอกเวลาทำการ">อยู่นอกเวลาทำการ</option>
+                                <option value="สินค้าหมด">สินค้าหมด</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer mt-4">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">ยกเลิก</button>
+                            <button class="btn btn-danger" type="submit">ยืนยัน</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- confirm mpdal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ยืนยันคำสั่งซื้อ</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="update-order.php" method="GET">
+                        <div class="col-auto my-1">
+                            <input type="text" class="d-none" value="เตรียมจัดส่ง" name="status">
+                            <input type="text" class="d-none" value="เตรียมจัดส่ง" name="message">
+                            <input type="text" class="d-none" value="<?php echo $order_id; ?>" name="order_id">
+                            <p>
+                                ต้องการยืนยันคำสั่งซื้อ ?
+                            </p>
+                        </div>
+
+                        <div class="modal-footer mt-4">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">ยกเลิก</button>
+                            <button class="btn btn-success" type="submit">ยืนยัน</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -297,6 +367,7 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
 
 </body>
 
