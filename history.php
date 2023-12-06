@@ -31,12 +31,12 @@
         <div class="container">
             <a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-                aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+                aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsCat Shop">
+            <div class="collapse navbar-collapse" id="navbarsCatShop">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li>
                         <a class="nav-link" href="index.php">หน้าเเรก</a>
@@ -89,7 +89,7 @@
                 </ol>
             </nav>
             <div class="row p-1">
-            <div class="col-3">
+            <div class="col-12 col-sm-12 col-lg-3">
                     <div class="list-group">
                         <a class="p-2 text-decoration-none" href="profile.php">โปรไฟล์</a>
                         <a class="list-group-item list-group-item-action active rounded"
@@ -99,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="col-9">
+                <div class="col-12 col-sm-12 col-lg-9">
                     <h4 class="text-dark">ประวัติคำสั่งซื้อ</h4>
                     <div class="list-group">
                         <?php 

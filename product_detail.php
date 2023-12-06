@@ -31,12 +31,12 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarsCat Shop">
+			<div class="collapse navbar-collapse" id="navbarsCatShop">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item ">
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
