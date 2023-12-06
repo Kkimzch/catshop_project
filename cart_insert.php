@@ -46,7 +46,8 @@ VALUES (NULL, $user_id, '$somePrice', '$shipping', '$totalPrice', '$fileNew', ''
 // เพิ่มข้อมูลไปยัง address
 $sql2 = "INSERT INTO `address` (`address_id`, `order_id`, `first_name`, `last_name`, `tel`, `address`, `district`, `area`, `province`, `post`) 
 VALUES (NULL, '$order_id', '$first_name', '$last_name', '$tel', '$address', '$district', '$area', '$province', '$post');";
-
+mysqli_query($conn, $sql2);
+echo $sql2;
 // สินค้าที่เลือก
 for ($i = 0; $i <= (int)$_SESSION['intLine']; $i++) {
     if (($_SESSION['strMenuID'][$i]) != "") {

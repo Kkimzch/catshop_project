@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -6,6 +5,9 @@
     <?php
 	require("database.php");
 	session_start();
+    if (!isset($_SESSION['email'])) {
+        header('location: Backoffice/login.php');
+      }
 	?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,14 +22,12 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <title>บทความ</title>
+    <title>ประวัติคำสั่งซื้อ</title>
 </head>
 
 <body>
-
     <!-- Start Header/Navigation -->
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
-
         <div class="container">
             <a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
@@ -42,15 +42,15 @@
                         <a class="nav-link" href="index.php">หน้าเเรก</a>
                     </li>
                     <li><a class="nav-link" href="shop.php">สินค้า</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="blog.php">บทความ</a></li>
+                    <li><a class="nav-link" href="blog.php">บทความ</a></li>
                     <li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
                     <li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <?php
-				if (isset($_SESSION['email'])) { 
-				?>
+					if (isset($_SESSION['email'])) { 
+					?>
                     <li>
                         <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
@@ -64,14 +64,14 @@
                     </li>
                     <li><a class="nav-link" href="cart.php"><img src="images/cart.svg"></a></li>
                     <?php
-				}else{
-					?>
+					}else{
+						?>
                     <li class="btn btn-secondary p-1 px-4">
                         <a href="Backoffice/login.php" class=" text-white p-2 px-3 text-decoration-none">เข้าสู่ระบบ</a>
                     </li>
                     <?php
-				}
-			?>
+					}
+					?>
                 </ul>
             </div>
         </div>
@@ -79,65 +79,105 @@
     </nav>
     <!-- End Header/Navigation -->
 
-    <!-- Start Hero Section -->
-    <div class="hero">
+    <!-- Start Why Choose Us Section -->
+    <div class="why-choose-section">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-5">
-                    <div class="intro-excerpt">
-                        <h1>ปัญหาระบบทางเดินปัสสาวะในแมว</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item text-dark">บัญชีของฉัน</a></li>
+                    <li class="breadcrumb-item">ประวัติคำสั่งซื้อ</li>
+                </ol>
+            </nav>
+            <div class="row p-1">
+            <div class="col-3">
+                    <div class="list-group">
+                        <a class="p-2 text-decoration-none" href="profile.php">โปรไฟล์</a>
+                        <a class="list-group-item list-group-item-action active rounded"
+                            href="history.php">ประวัติคำสั่งซื้อ</a>
+                        <a class="p-2 text-decoration-none" href="edit_profile.php">ตั้งค่าโปรไฟล์</a>
+                        <a class="p-2 text-decoration-none" href="reset_password.php">เปลี่ยนรหัสผ่าน</a>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="hero-img-wrap">
+
+                <div class="col-9">
+                    <h4 class="text-dark">ประวัติคำสั่งซื้อ</h4>
+                    <div class="list-group">
+                        <?php 
+                        $user_id = $_SESSION['user_id'];
+                        $sql = "SELECT * FROM `orders` WHERE user_id = '$user_id';";
+                        $result = mysqli_query($conn, $sql);
+                       while ($row = $result->fetch_assoc()) {
+                       ?>
+                        <a href="order_detail.php?order_id=<?php echo $row['order_id'] ?>" class="list-group-item list-group-item-action flex-column align-items-start p-3">
+                            <div class="row">
+                                <div class="col col-lg-2  py-0 d-flex align-items-stretch justify-content-center">
+                                    <?php
+                                        if($row['status'] = 'รอตรวจสอบ'){
+                                        ?>
+                                    <div class="alert alert-warning m-0 d-flex align-self-center">
+                                        รอตรวจสอบ
+                                    </div>
+
+                                    <?php
+                                        }elseif ($row['status'] = 'กำลังจัดเตรียม') {
+                                        ?>
+                                    <div class="alert alert-primary m-0 d-flex align-self-center">
+                                        กำลังจัดเตรียม
+                                    </div>
+                                    <?php  
+                                        }elseif ($row['status'] = 'จัดส่งเเล้ว') {
+                                    ?>
+                                    <div class="alert alert-success m-0 d-flex align-self-center">
+                                        จัดส่งเเล้ว
+                                    </div>
+                                    <?php
+                                        }
+                                         else {
+                                            ?>
+                                    <div class="alert alert-danger m-0 d-flex align-self-center">
+                                        ยกเลิก
+                                    </div>
+                                    <?php
+                                        }
+                                    ?>
+                                </div>
+                                <div class="col col-lg-10">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1 text-primary">
+                                            #<?php echo $row['order_id'];echo $row['time']; ?></h6>
+                                        <h6>฿<?php echo $row['sometotal']?></h6>
+                                    </div>
+                                    <p class="mb-1">
+                                        ผู้รับ : 
+                                        <?php
+                                        $order_id = $row['order_id'];
+                                        $sql2 = "SELECT * FROM `address` WHERE order_id = '$order_id';";
+                                        $result2 = mysqli_query($conn, $sql2);
+                                        $row2 = $result2->fetch_assoc();
+                                        echo $row2['first_name']; 
+                                        ?>
+                                        <?php echo $row2['last_name'];?>
+                                    </p>
+                                    <small><?php echo $row2['tel'];?></small>
+                                </div>
+                            </div>
+                        </a>
+                        <?php
+                       }
+                        ?>
                     </div>
+
+
+
+                    </a>
                 </div>
+
             </div>
         </div>
     </div>
-    <!-- End Hero Section -->
-
-
-
-    <!-- Start Blog Section -->
-    <div class="blog-section">
-        <div class="container">
-
-            <div class="row">
-                         <?php
-                         $id = $_GET['blog_id'];
-      					$sql = "SELECT * FROM `blog` WHERE blog_id = '$id';";
-     					$result = mysqli_query($conn, $sql);
-     					$row = $result->fetch_assoc()
-     					?>
-                <div class="col-12 col-sm-5 col-md-5 mb-5">
-                    <div class="post-entry">
-                        <a class="post-thumbnail"><img src="images/blog/<?php echo $row['img'];?>" alt="Image" class="img-fluid"></a>
-                    </div>
-                    <div class="meta">
-								<span><?php echo $row['name'];?></span>
-							</div>
-                </div>
-
-                <div class="col-12 col-sm-7 col-md-7 mb-7">
-                    <div class="post-entry">
-                        <h4 class="text-dark"><strong><?php echo $row['blog_title'];?></strong>
-                        </h4>
-                        
-                        <p>
-                        <?php echo $row['description'];?>
-                        </p>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <!-- End Blog Section -->
-
-
     </div>
-
+    </div>
+    <!-- End Why Choose Us Section -->
     <!-- Start Footer Section -->
     <footer class="footer-section">
         <div class="container relative">
@@ -210,6 +250,16 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
+
 </body>
 
 </html>
+
+<style>
+    .list-group-item.active {
+        z-index: 2;
+        color: #fff;
+        background-color: #557A46;
+        border-color: #557A46;
+    }
+</style>

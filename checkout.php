@@ -57,9 +57,9 @@
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>
 								<?php echo $_SESSION['last_name'];?></a>
-							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
@@ -90,7 +90,6 @@
 	</div>
 	<!-- End Hero Section -->
 
-	<div class="">
 		<div class="container">
 			<form class="user" method="POST" action="cart_insert.php" enctype="multipart/form-data">
 				<div class="row">
