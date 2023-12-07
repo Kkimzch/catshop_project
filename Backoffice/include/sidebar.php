@@ -77,7 +77,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">สินค้า</h6>
-                <a class="collapse-item" href="login.html">สินค้า</a>
+                <a class="collapse-item" href="product.php">สินค้า</a>
                 <a class="collapse-item" href="register.html">หมวดหมู่</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">อื่น ๆ</h6>
