@@ -79,7 +79,18 @@
                                                 <div class="text-h6 font-weight-bold text-warning text-uppercase mb-1">
                                                     รอตรวจสอบ
                                                 </div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                                <?php
+                                                $query = "SELECT COUNT(*) AS total FROM orders WHERE status='รอตรวจสอบ'";
+                                                $query_result = $conn->query($query);
+    
+                                                if ($query_result->num_rows > 0) {
+                                                    $query_row = $query_result->fetch_assoc();
+                                                    $total = $query_row["total"];
+                                                } else {
+                                                    $total = 0;
+                                                }
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total;?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +103,18 @@
                                             <div class="col mr-2">
                                                 <div class="text-h6 font-weight-bold text-primary text-uppercase mb-1">
                                                     กำลังจัดเตรียม</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                                    <?php
+                                                    $query2 = "SELECT COUNT(*) AS total FROM orders WHERE status='เตรียมจัดส่ง'";
+                                                    $query_result2 = $conn->query($query2);
+        
+                                                    if ($query_result2->num_rows > 0) {
+                                                        $query_row2 = $query_result2->fetch_assoc();
+                                                        $total = $query_row2["total"];
+                                                    } else {
+                                                        $total = 0;
+                                                    }
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total;?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +127,18 @@
                                             <div class="col mr-2">
                                                 <div class="text-h6 font-weight-bold text-success text-uppercase mb-1">
                                                     จัดส่งเเล้ว</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                                    <?php
+                                                    $query3 = "SELECT COUNT(*) AS total FROM orders WHERE status='จัดส่งเเล้ว'";
+                                                    $query_result3 = $conn->query($query3);
+        
+                                                    if ($query_result2->num_rows > 0) {
+                                                        $query_row3 = $query_result3->fetch_assoc();
+                                                        $total = $query_row3["total"];
+                                                    } else {
+                                                        $total = 0;
+                                                    }
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total;?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -119,12 +152,18 @@
                                                 <div class="text-h6 font-weight-bold text-danger text-uppercase mb-1">
                                                     ยกเลิก
                                                 </div>
-                                                <div class="row no-gutters align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <?php
+                                                    $query4 = "SELECT COUNT(*) AS total FROM orders WHERE status='ยกเลิก'";
+                                                    $query_result4 = $conn->query($query4);
+        
+                                                    if ($query_result4->num_rows > 0) {
+                                                        $query_row4 = $query_result4->fetch_assoc();
+                                                        $total = $query_row4["total"];
+                                                    } else {
+                                                        $total = 0;
+                                                    }
+                                                ?>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total;?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -206,7 +245,7 @@
                                     </div>
 
                                     <?php
-                                        }elseif ($row['status'] == 'กำลังจัดเตรียม') {
+                                        }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                         ?>
                                     <div class="text-primary">
                                         กำลังจัดเตรียม

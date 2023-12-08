@@ -46,7 +46,6 @@
                     <li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
                     <li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
                 </ul>
-
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
                     <?php
 					if (isset($_SESSION['email'])) { 
@@ -119,9 +118,35 @@
                                 <h6 class="text-primary">#<?php echo $row['order_id'];echo $row['time']; ?></h6>
                             </div>
                             <div>
+                                <?php
+                                        if($row['status'] == 'รอตรวจสอบ'){
+                                        ?>
                                 <div class="alert alert-warning p-0 px-1">
                                     รอตรวจสอบ
                                 </div>
+
+                                <?php
+                                        }elseif ($row['status'] == 'เตรียมจัดส่ง') {
+                                        ?>
+                                <div class="alert alert-primary p-0 px-1">
+                                    กำลังจัดเตรียม
+                                </div>
+                                <?php  
+                                        }elseif ($row['status'] == 'จัดส่งเเล้ว') {
+                                    ?>
+                                <div class="alert alert-success p-0 px-1">
+                                    จัดส่งเเล้ว
+                                </div>
+                                <?php
+                                        }
+                                         else {
+                                            ?>
+                                <div class="alert alert-danger p-0 px-1">
+                                    ยกเลิก
+                                </div>
+                                <?php
+                                        }
+                                    ?>
                             </div>
                         </div>
                         <div class="row">
@@ -136,18 +161,29 @@
                             ที่อยู่จัดส่ง : <?php echo $row2['address'];?> <?php echo $row2['district'];?>
                             <?php echo $row2['area'];?> <?php echo $row2['province'];?> <?php echo $row2['post'];?>
                         </p>
+                        <?php 
+                            if($row['status'] == 'ยกเลิก'){
+                                ?>
+                        <p class="m-0">
+                            หมายเหตุ : <?php echo $row['message'];?>
+                        </p>
+                        <?php
+                            }
+                        
+                        ?>
                         <div class="row">
                             <div class="col col-lg-2 ">
-                                หลักฐานการชำระเงิน 
+                                หลักฐานการชำระเงิน
                             </div>
                             <div class="col">
                                 <p>
                                     <a data-toggle="collapse" href="#collapseExample" role="button"
-                                      aria-expanded="false" aria-controls="collapseExample">
+                                        aria-expanded="false" aria-controls="collapseExample">
                                         คลิ๊กเพื่อดูรูป
                                     </a>
                                     <div class="collapse" id="collapseExample">
-                                            <img src="images/slip/<?php echo $row['slip']?>" class="img-fluid" style="width: 250px;">
+                                        <img src="images/slip/<?php echo $row['slip']?>" class="img-fluid"
+                                            style="width: 250px;">
                                     </div>
                                 </p>
                             </div>
@@ -200,11 +236,18 @@
                         </div>
 
                         <hr>
-                        <h6 class="text-dark">เลขพัสดุ : 3242423</h6>
+                        <?php
+                        if($row['status'] == 'จัดส่งเเล้ว'){
+                        ?>
+                        <h6 class="text-dark">เลขพัสดุ : <?php echo $row['message']?></h6>
                         <div class="d-flex flex-row">
                             <p class="p-2">เช็คเลขพัสดุ</p>
                             <a class="p-2" href="https://track.thailandpost.com/" target="_blank">คลิ๊กที่นี่ !!</a>
                         </div>
+                        <?php
+                        }
+                        ?>
+
 
                     </div>
                     </a>

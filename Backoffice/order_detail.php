@@ -90,7 +90,7 @@
                                     รอตรวจสอบ
                                 </div>
                                 <?php
-                                              }elseif ($row['status'] == 'กำลังจัดเตรียม') {
+                                              }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                          ?>
                                 <div class="text-primary text-center">
                                     กำลังจัดเตรียม
@@ -179,12 +179,12 @@
                                                 </a>
                                             </div>
                                             <?php
-                                              }elseif ($row['status'] == 'กำลังจัดเตรียม') {
+                                              }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                          ?>
                                             <form action="update-order.php" method="GET">
                                                 <div>
                                                 <input type="text" class="d-none" value="<?php echo $order_id; ?>" name="order_id">
-                                                    <input type="text" class="form-control bg-light border-0 small mt-4"
+                                                    <input type="text" class="form-control bg-light small mt-4"
                                                         placeholder="เพิ่มเลขพัสดุ" name="message" required>
                                                     <input type="text"
                                                         class="d-none form-control bg-light border-0 small mt-4"

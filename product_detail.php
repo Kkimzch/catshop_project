@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -55,7 +54,8 @@
 						<a class="nav-link" href="profile" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>   <?php echo $_SESSION['last_name'];?></a>
+							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>
+								<?php echo $_SESSION['last_name'];?></a>
 							<a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
@@ -137,11 +137,23 @@
 						<p><?= $row['description'] ?></p>
 
 					</div>
+					<?php 
+						if ($row['status'] == 'N'){
+							?>
+							<h3 class="text-danger p-3 p-lg-5" align="center">สินค้าหมด</h3>
+							<?php
+						}else{
+							?>
 					<div align="center">
 						<button class="btn btn-black btn-lg py-3 btn-block"
 							onclick="window.location='order.php?product_id=<?php echo $row['product_id'] ?>'"><img
 								src="images/cart.svg" class="mx-3">เพิ่มใส่ตะกร้า</button>
 					</div>
+					<?php
+						}
+					
+					?>
+
 				</div>
 			</div>
 			<h5>สินค้าเเนะนำ</h5>
@@ -249,12 +261,18 @@
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/tiny-slider.js"></script>
 	<script src="js/custom.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
 
-	
-   <!-- Modal เเสดงภาพ -->
+
+	<!-- Modal เเสดงภาพ -->
 	<style>
 		#myImg {
 			border-radius: 5px;

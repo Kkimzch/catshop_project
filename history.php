@@ -104,7 +104,7 @@
                     <div class="list-group">
                         <?php 
                         $user_id = $_SESSION['user_id'];
-                        $sql = "SELECT * FROM `orders` WHERE user_id = '$user_id';";
+                        $sql = "SELECT * FROM `orders` WHERE user_id = '$user_id' ORDER BY `order_id` DESC;";
                         $result = mysqli_query($conn, $sql);
                        while ($row = $result->fetch_assoc()) {
                        ?>
@@ -112,20 +112,20 @@
                             <div class="row">
                                 <div class="col col-lg-2  py-0 d-flex align-items-stretch justify-content-center">
                                     <?php
-                                        if($row['status'] = 'รอตรวจสอบ'){
+                                        if($row['status'] == 'รอตรวจสอบ'){
                                         ?>
                                     <div class="alert alert-warning m-0 d-flex align-self-center">
                                         รอตรวจสอบ
                                     </div>
 
                                     <?php
-                                        }elseif ($row['status'] = 'กำลังจัดเตรียม') {
+                                        }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                         ?>
                                     <div class="alert alert-primary m-0 d-flex align-self-center">
                                         กำลังจัดเตรียม
                                     </div>
                                     <?php  
-                                        }elseif ($row['status'] = 'จัดส่งเเล้ว') {
+                                        }elseif ($row['status'] == 'จัดส่งเเล้ว') {
                                     ?>
                                     <div class="alert alert-success m-0 d-flex align-self-center">
                                         จัดส่งเเล้ว
@@ -158,7 +158,18 @@
                                         ?>
                                         <?php echo $row2['last_name'];?>
                                     </p>
-                                    <small><?php echo $row2['tel'];?></small>
+                                    <p class="p-0 m-0">จำนวน : <?php
+                                                    $sql3 ="SELECT COUNT(*) AS total FROM order_detail WHERE order_id=$order_id";
+                                                    $result3 = $conn->query($sql3);
+                                                    if ($result3->num_rows > 0) {
+                                                        $row3 = $result3->fetch_assoc();
+                                                        $total = $row3["total"];
+                                                        echo $total;
+                                                    } else {
+                                                        echo "ไม่พบข้อมูล";
+                                                    }
+                                                ?>
+                                                </p>
                                 </div>
                             </div>
                         </a>
