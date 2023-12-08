@@ -30,7 +30,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-list"></i>
             <span>สถานะคำสั่งซื้อ</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -47,7 +47,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
+            <i class="fas fa-fw fa-clipboard"></i>
             <span>รายงาน</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -71,7 +71,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-cog"></i>
             <span>เว็บไซต์</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -91,7 +91,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true"
             aria-controls="collapsePages2">
-            <i class="fas fa-fw fa-folder"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>สมาชิก</span>
         </a>
         <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -102,9 +102,14 @@
         </div>
     </li>
 
-
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+                <a class="nav-link" href="contact.php">
+                    <i class="fas fa-fw fa-headset"></i>
+                    <span>ติดต่อเรา</span></a>
+            </li>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
