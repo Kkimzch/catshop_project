@@ -172,7 +172,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">
-                                                                    เพิ่มสินค้าใหม่</h5>
+                                                                    แก้ไขข้อมูล</h5>
                                                                 <button class="close" type="button" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                     <span aria-hidden="true">×</span>
@@ -360,7 +360,7 @@
                                                                 <?php echo $row['name']; ?> &nbsp; ใช่ไหม</div>
                                                             <div class="modal-footer">
                                                                 <button class="btn btn-secondary" type="button"
-                                                                    data-dismiss="modal">Cancel</button>
+                                                                    data-dismiss="modal">ยกเลิก</button>
                                                                 <a class="btn btn-danger"
                                                                     href="product.php?delete_product_id=<?php echo $row['product_id']; ?>">ยืนยัน</a>
                                                             </div>
@@ -518,9 +518,6 @@
             </div>
         </div>
     </div>
-
-
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
