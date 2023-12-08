@@ -334,7 +334,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form action="type.php" method="GET">
+                <form action="type.php" method="GET" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group mb-1">
                             <label class="m-0">ชื่อหมวดหมู่<span class="text-danger">*</span></label>

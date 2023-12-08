@@ -81,6 +81,7 @@
                 <a class="collapse-item" href="type.php">หมวดหมู่</a>
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">อื่น ๆ</h6>
+                <a class="collapse-item" href="payment.php">ช่องทางการชำระเงิน</a>
                 <a class="collapse-item" href="404.html">ค่าจัดส่ง</a>
                 <a class="collapse-item" href="blog.php">บทความ</a>
             </div>

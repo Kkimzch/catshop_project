@@ -217,7 +217,7 @@
 											<div class="d-flex align-items-center"><?php echo $row3['PromptPay']; ?>
 											</div>
 										</div>
-										<img src="images/8402.jpg" class="img-fluid mt-2">
+										<img src="images/<?php echo $row3['img']; ?>" class="img-fluid mt-2">
 									</div>
 								</div>
 							</div>
