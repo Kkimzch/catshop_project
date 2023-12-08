@@ -240,35 +240,35 @@
                                             <?php
                                         if($row['status'] == 'รอตรวจสอบ'){
                                         ?>
-                                    <div class="text-warning">
-                                        รอตรวจสอบ
-                                    </div>
+                                            <div class="text-warning">
+                                                รอตรวจสอบ
+                                            </div>
 
-                                    <?php
-                                        }elseif ($row['status'] == 'เตรียมจัดส่ง') {
-                                        ?>
-                                    <div class="text-primary">
-                                        กำลังจัดเตรียม
-                                    </div>
-                                    <?php  
-                                        }elseif ($row['status'] == 'จัดส่งเเล้ว') {
-                                    ?>
-                                    <div class="text-success">
-                                        จัดส่งเเล้ว
-                                    </div>
-                                    <?php
-                                        }
-                                         else {
+                                            <?php
+                                                }elseif ($row['status'] == 'เตรียมจัดส่ง') {
+                                                ?>
+                                            <div class="text-primary">
+                                                กำลังจัดเตรียม
+                                            </div>
+                                            <?php  
+                                                }elseif ($row['status'] == 'จัดส่งเเล้ว') {
                                             ?>
-                                    <div class="text-danger">
-                                        ยกเลิก
-                                    </div>
-                                    <?php
-                                        }
-                                    ?>
-                                            </td>
-                                        </tr>
-                                        <?php } ?>
+                                            <div class="text-success">
+                                                จัดส่งเเล้ว
+                                            </div>
+                                            <?php
+                                                }
+                                                else {
+                                                    ?>
+                                            <div class="text-danger">
+                                                ยกเลิก
+                                            </div>
+                                            <?php
+                                                }
+                                            ?>
+                                                    </td>
+                                                </tr>
+                                                <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
