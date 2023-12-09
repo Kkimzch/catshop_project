@@ -105,7 +105,7 @@
                                     <div class="row text-dark mt-3">
                                         <div class="col col-lg-3 align-self-start">เนื้อหา</div>
                                         <div class="col col-lg-9">
-                                            <textarea name="description" class="form-control" id="description"rows="10" required>
+                                            <textarea name="description" class="form-control" id="description" required>
                                                <?php echo $row['description']; ?>
                                             </textarea>
                                         </div>

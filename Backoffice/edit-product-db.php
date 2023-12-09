@@ -36,7 +36,7 @@ SET `type_id` = '$type_id', `name` = '$name', `description` = '$description', `i
 WHERE `product`.`product_id` = $product_id;");
 $sql->execute();
 if ($sql) {
-    header("refresh:2; url=product.php");
+    header("location: product.php?message=บันทึก");
 } else {
     echo "";
 }

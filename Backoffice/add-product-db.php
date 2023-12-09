@@ -27,7 +27,7 @@ if (in_array($fileActExt, $allow)) {
 $sql = "INSERT INTO `product` (`product_id`, `type_id`, `name`, `description`, `img`, `price`, `unit`, `weight`, `QTY`, `status`) 
 VALUES (NULL, '$type_id', '$name', '$description', '$fileNew', '$price', '$unit', '$weight', '$QTY ', '$status');";
 if(mysqli_query($conn, $sql)){
-    header("location: product.php");
+    header("location: product.php?message=บันทึก");
 }
 
 ?>

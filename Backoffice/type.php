@@ -18,7 +18,7 @@
         $type_name = $_GET['type_name'];
         $addtype = "INSERT INTO `type` (`type_id`, `type_name`) VALUES (NULL, '$type_name');";
         if(mysqli_query($conn, $addtype)){
-            header("location: type.php");
+            header("location: type.php?message=บันทึก");
         }
     }
     //ลบ
@@ -27,7 +27,7 @@
         $delet= $conn->query("DELETE FROM type WHERE type_id = $delete_id");
     
         if ($delet) {
-            header("location: type.php");
+            header("location: type.php?message=บันทึก");
         } 
     }
     //แก้ไข
@@ -37,7 +37,7 @@
         $edittype = $conn->prepare("UPDATE `type` SET `type_name` = '$type_name' WHERE `type`.`type_id` = $type_id;");
         $edittype->execute();
         if ($edittype) {
-            header("refresh:2; url=type.php");
+            header("location: type.php?message=บันทึก");
         }
         
     }
@@ -89,7 +89,16 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                    <?php
+                    if (isset($_GET['message'])){
+                        $message = $_GET['message'];
+                        if($message == 'บันทึก'){
+                        ?>
+                    <div class="alert alert-success" role="alert">
+                        บันทึกข้อมูลเสร็จสิ้น
+                    </div>
+                    <?php
+                        } }  ?>
                     <!-- Page Heading -->
                     <div>
                         <!-- Page Heading -->

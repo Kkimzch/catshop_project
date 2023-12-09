@@ -91,12 +91,12 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true"
             aria-controls="collapsePages2">
             <i class="fas fa-fw fa-user"></i>
-            <span>สมาชิก</span>
+            <span>บัญชีผู้ใช้</span>
         </a>
         <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="login.html">Admin</a>
-                <a class="collapse-item" href="register.html">ลูกค้า</a>
+                <a class="collapse-item" href="user.php?status=Admin">Admin</a>
+                <a class="collapse-item" href="user.php?status=User">ลูกค้า</a>
             </div>
         </div>
     </li>

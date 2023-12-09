@@ -19,7 +19,7 @@
         $delet= $conn->query("DELETE FROM product WHERE product_id = $delete_id");
 
         if ($delet) {
-            header("refresh:1; url=product.php");
+            header("location: product.php?message=บันทึก");
         }
     }
      ?>
@@ -70,7 +70,16 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
+                <?php
+                    if (isset($_GET['message'])){
+                        $message = $_GET['message'];
+                        if($message == 'บันทึก'){
+                        ?>
+                    <div class="alert alert-success" role="alert">
+                        บันทึกข้อมูลเสร็จสิ้น
+                    </div>
+                    <?php
+                        } }  ?>
                     <!-- Page Heading -->
                     <div>
                         <!-- Page Heading -->
