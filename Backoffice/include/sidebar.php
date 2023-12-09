@@ -53,9 +53,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="report.php">รายงานเลือกตามช่วงเวลา</a>
-                <a class="collapse-item" href="utilities-border.html">รายงานยอดขายตามวัน</a>
-                <a class="collapse-item" href="utilities-animation.html">รายงานยอดขายตามเดือน</a>
-                <a class="collapse-item" href="utilities-other.html">รายงานยอดขายตามปี</a>
+                <a class="collapse-item" href="report-day.php">รายงานยอดขายตามวัน</a>
+                <a class="collapse-item" href="report-month.php">รายงานยอดขายตามเดือน</a>
+                <a class="collapse-item" href="report-year.php">รายงานยอดขายตามปี</a>
             </div>
         </div>
     </li>
