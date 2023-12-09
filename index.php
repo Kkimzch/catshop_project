@@ -35,12 +35,12 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarsCat Shop">
+			<div class="collapse navbar-collapse" id="navbarsCatShop">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item active">
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
@@ -50,7 +50,6 @@
 					<li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
 					<li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
 				</ul>
-
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 					<?php
 						if (isset($_SESSION['email'])) { 
@@ -59,9 +58,9 @@
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>
 								<?php echo $_SESSION['last_name'];?></a>
-							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
@@ -91,8 +90,7 @@
 					<div class="intro-excerpt">
 						<h1>Cat Shop !! <p clsas="d-block">ยินดีต้อนรับ</p>
 						</h1>
-						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
-							อาหารเม็ด อาหารเปียก ขนม ของใช้ ของเล่น</p>
+						<p class="mb-4">เราคือทีมงานที่มีความคล่องตัวและรู้จักแมวมากมาย ซึ่งทำให้เราเป็นผู้เชี่ยวชาญในการเลือกและจัดหาอาหารที่มีคุณภาพสูงสุดสำหรับเพื่อนที่มีหางของคุณ.</p>
 						<p><a href="shop.php" class="btn btn-secondary me-2 text-white">เลือกซื้อเลย</a></p>
 					</div>
 				</div>
@@ -160,8 +158,7 @@
 				<!-- Start Column 1 -->
 				<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
 					<h2 class="mb-4 section-title">สินค้าของเรา</h2>
-					<p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-						vulputate velit imperdiet dolor tempor tristique. </p>
+					<p class="mb-4">เราทุ่มเทในการเลือกเฉพาะสินค้าที่มีประสิทธิภาพสูงสุดเพื่อให้แน่ใจว่าแมวของคุณได้รับโภชนาการทางอาหารที่ดีที่สุด</p>
 					<p><a href="shop.php" class="btn">ดูเพิ่มเติม</a></p>
 				</div>
 				<!-- End Column 1 -->
@@ -200,11 +197,10 @@
 	<!-- Start Why Choose Us Section -->
 	<div class="why-choose-section">
 		<div class="container">
-			<div class="row justify-content-between">
+			<div class="row justify-content-between align-items-center">
 				<div class="col-lg-6">
-					<h2 class="section-title">ทำไมถึงต้องเลือกสินค้าจากร้านเรา</h2>
-					<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
-						imperdiet dolor tempor tristique.</p>
+					<h2 class="section-title">ยินดีต้อนรับทุกท่านสู่ร้าน Cat Shop.</h2>
+					<p>ที่ Cat Shop. เราเข้าใจความหมายของคำว่า "ความรัก" และเรามุ่งมั่นที่จะให้ความรักนี้ถึงกับสมาชิกทุกคนในครอบครัวของเราที่มีขนกว่า. เราคือทีมงานที่มีความคล่องตัวและรู้จักแมวมากมาย ซึ่งทำให้เราเป็นผู้เชี่ยวชาญในการเลือกและจัดหาอาหารที่มีคุณภาพสูงสุดสำหรับเพื่อนที่มีหางของคุณ.</p>
 
 					<div class="row my-5">
 						<div class="col-6 col-md-6">
@@ -212,9 +208,8 @@
 								<div class="icon">
 									<img src="images/truck.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>ส่งฟรี &amp; ขั้นต่ำ 200 บาท</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>ความเป็นเลิศในคุณภาพ</h3>
+								<p>เราทราบดีว่าการให้อาหารที่ดีเหมือนเป็นการให้รัก ทุกชิ้นส่วนของอาหารที่เราเลือกมีคุณภาพและได้รับการทดสอบเพื่อความปลอดภัย.</p>
 							</div>
 						</div>
 
@@ -223,9 +218,8 @@
 								<div class="icon">
 									<img src="images/bag.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>ซื้อสินค้าง่าย ๆ ไม่ต้องไปถึงห้าง</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>สินค้าที่หลากหลาย</h3>
+								<p>Cat Shop. มีการสรรหาสินค้าที่หลากหลาย, ไม่ว่าจะเป็นอาหาร, ของเล่น, หรืออุปกรณ์การดูแล, เพื่อให้คุณแมวของคุณได้รับทุกสิ่งที่ต้องการ.</p>
 							</div>
 						</div>
 
@@ -234,20 +228,28 @@
 								<div class="icon">
 									<img src="images/support.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>มีหน้าร้านจริง</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>ความใส่ใจสู่ลูกค้า</h3>
+								<p>เราตระหนักถึงความสำคัญของการดูแลและให้ความสะดวกสบายในการช้อปปิ้ง. ทีมงานของเราพร้อมให้คำแนะนำและบริการที่ทุกท่านต้องการ.</p>
 							</div>
 						</div>
+
+						<div class="col-6 col-md-6">
+							<div class="feature">
+								<div class="icon">
+									<img src="images/return.svg" alt="Image" class="imf-fluid">
+								</div>
+								<h3>ความรักที่ไร้เงื่อนไข</h3>
+								<p>ทุกสินค้าและบริการที่เราให้, เต็มไปด้วยความรักและความใส่ใจที่เป็นเอกลักษณ์. เราตั้งใจที่จะทำให้แมวของคุณมีชีวิตที่สุขและสุขภาพที่ดี.</p>
+							</div>
+						</div>
+
 					</div>
 				</div>
-
 				<div class="col-lg-5">
 					<div class="img-wrap">
 						<img src="images/why-choose-us-img.png" alt="Image" class="img-fluid">
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
@@ -265,18 +267,16 @@
 					</div>
 				</div>
 				<div class="col-lg-5 ps-lg-5">
-					<h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
-					<p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada.
-						Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque
-						habitant morbi tristique senectus et netus et malesuada</p>
+					<h2 class="section-title mb-4">ที่ Cat Shop. เราเป็นที่รู้จักด้วยความรักและเลือกที่ดีที่สุดสำหรับแมวของคุณ.</h2>
+					<p>เราไม่เพียงแค่ร้านค้า, เราคือที่บริจาคความรักให้กับสมาชิกในครอบครัวของเราทุกท่าน. ขอเชิญทุกท่านตั้งคำถาม, แลกเปลี่ยนประสบการณ์, และเข้ามาร่วมสร้างประสบการณ์ช้อปปิ้งที่น่าจดจำที่สุดไปด้วยกัน.</p>
 
 					<ul class="list-unstyled custom-list my-4">
-						<li>Donec vitae odio quis nisl dapibus malesuada</li>
-						<li>Donec vitae odio quis nisl dapibus malesuada</li>
-						<li>Donec vitae odio quis nisl dapibus malesuada</li>
-						<li>Donec vitae odio quis nisl dapibus malesuada</li>
+						<li>เราทุ่มเทในการเลือกเฉพาะสินค้าที่มีประสิทธิภาพสูงสุดเพื่อให้แน่ใจว่าแมวของคุณได้รับโภชนาการทางอาหารที่ดีที่สุด</li>
+						<li>เราเลือกใช้และนำเข้าสินค้าจากแหล่งที่ได้มาตรฐาน, เพื่อให้คุณมั่นใจได้ว่าทุกสินค้าที่คุณได้รับคือคุณภาพที่มีค่า</li>
+						<li>ทีมงานของเราพร้อมให้บริการและแนะนำทุกรายละเอียด. เรายินดีที่จะช่วยเสมอภาคเพื่อให้ท่านพบกับประสบการณ์ที่เต็มไปด้วยความพอใจ</li>
+						<li>เราไม่เพียงเป็นที่ขายของ, แต่เราคือส่วนหนึ่งของชุมชนที่รักแมว. มาร่วมแบ่งปันประสบการณ์และความน่ารักของแมวคุณไปพร้อมกับเราที่ Cat Shop.</li>
 					</ul>
-					<p><a herf="#" class="btn">Explore</a></p>
+					<p><a href="contact.php" class="btn">ติดต่อเรา</a></p>
 				</div>
 			</div>
 		</div>

@@ -1,10 +1,4 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Cat Shop
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+
 <!doctype html>
 <html lang="en">
 
@@ -35,12 +29,12 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarsCat Shop">
+			<div class="collapse navbar-collapse" id="navbarsCatShop">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li>
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
@@ -59,9 +53,9 @@
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>
 								<?php echo $_SESSION['last_name'];?></a>
-							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
@@ -107,9 +101,8 @@
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-lg-6">
-					<h2 class="section-title">Why Choose Us</h2>
-					<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit
-						imperdiet dolor tempor tristique.</p>
+					<h2 class="section-title">ยินดีต้อนรับทุกท่านสู่ร้าน Cat Shop.</h2>
+					<p>ที่ Cat Shop. เราเข้าใจความหมายของคำว่า "ความรัก" และเรามุ่งมั่นที่จะให้ความรักนี้ถึงกับสมาชิกทุกคนในครอบครัวของเราที่มีขนกว่า. เราคือทีมงานที่มีความคล่องตัวและรู้จักแมวมากมาย ซึ่งทำให้เราเป็นผู้เชี่ยวชาญในการเลือกและจัดหาอาหารที่มีคุณภาพสูงสุดสำหรับเพื่อนที่มีหางของคุณ.</p>
 
 					<div class="row my-5">
 						<div class="col-6 col-md-6">
@@ -117,9 +110,8 @@
 								<div class="icon">
 									<img src="images/truck.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>Fast &amp; Free Shipping</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>ความเป็นเลิศในคุณภาพ</h3>
+								<p>เราทราบดีว่าการให้อาหารที่ดีเหมือนเป็นการให้รัก ทุกชิ้นส่วนของอาหารที่เราเลือกมีคุณภาพและได้รับการทดสอบเพื่อความปลอดภัย.</p>
 							</div>
 						</div>
 
@@ -128,9 +120,8 @@
 								<div class="icon">
 									<img src="images/bag.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>Easy to Shop</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>สินค้าที่หลากหลาย</h3>
+								<p>Cat Shop. มีการสรรหาสินค้าที่หลากหลาย, ไม่ว่าจะเป็นอาหาร, ของเล่น, หรืออุปกรณ์การดูแล, เพื่อให้คุณแมวของคุณได้รับทุกสิ่งที่ต้องการ.</p>
 							</div>
 						</div>
 
@@ -139,9 +130,8 @@
 								<div class="icon">
 									<img src="images/support.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>24/7 Support</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>ความใส่ใจสู่ลูกค้า</h3>
+								<p>เราตระหนักถึงความสำคัญของการดูแลและให้ความสะดวกสบายในการช้อปปิ้ง. ทีมงานของเราพร้อมให้คำแนะนำและบริการที่ทุกท่านต้องการ.</p>
 							</div>
 						</div>
 
@@ -150,287 +140,93 @@
 								<div class="icon">
 									<img src="images/return.svg" alt="Image" class="imf-fluid">
 								</div>
-								<h3>Hassle Free Returns</h3>
-								<p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-									vulputate.</p>
+								<h3>ความรักที่ไร้เงื่อนไข</h3>
+								<p>ทุกสินค้าและบริการที่เราให้, เต็มไปด้วยความรักและความใส่ใจที่เป็นเอกลักษณ์. เราตั้งใจที่จะทำให้แมวของคุณมีชีวิตที่สุขและสุขภาพที่ดี.</p>
 							</div>
 						</div>
 
 					</div>
 				</div>
-
 				<div class="col-lg-5">
 					<div class="img-wrap">
-						<img src="images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
+						<img src="images/why-choose-us-img.png" alt="Image" class="img-fluid">
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
 	<!-- End Why Choose Us Section -->
-
-	<!-- Start Team Section -->
-	<div class="untree_co-section">
-		<div class="container">
-
-			<div class="row mb-5">
-				<div class="col-lg-5 mx-auto text-center">
-					<h2 class="section-title">Our Team</h2>
-				</div>
-			</div>
-
-			<div class="row">
-
-				<!-- Start Column 1 -->
-				<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-					<img src="images/person_1.jpg" class="img-fluid mb-5">
-					<h3 clas><a href="#"><span class="">Lawson</span> Arnold</a></h3>
-					<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-					<p>Separated they live in.
-						Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-						ocean.</p>
-					<p class="mb-0"><a href="#" class="more dark">Learn More <span
-								class="icon-arrow_forward"></span></a></p>
-				</div>
-				<!-- End Column 1 -->
-
-				<!-- Start Column 2 -->
-				<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-					<img src="images/person_2.jpg" class="img-fluid mb-5">
-
-					<h3 clas><a href="#"><span class="">Jeremy</span> Walker</a></h3>
-					<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-					<p>Separated they live in.
-						Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-						ocean.</p>
-					<p class="mb-0"><a href="#" class="more dark">Learn More <span
-								class="icon-arrow_forward"></span></a></p>
-
-				</div>
-				<!-- End Column 2 -->
-
-				<!-- Start Column 3 -->
-				<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-					<img src="images/person_3.jpg" class="img-fluid mb-5">
-					<h3 clas><a href="#"><span class="">Patrik</span> White</a></h3>
-					<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-					<p>Separated they live in.
-						Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-						ocean.</p>
-					<p class="mb-0"><a href="#" class="more dark">Learn More <span
-								class="icon-arrow_forward"></span></a></p>
-				</div>
-				<!-- End Column 3 -->
-
-				<!-- Start Column 4 -->
-				<div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
-					<img src="images/person_4.jpg" class="img-fluid mb-5">
-
-					<h3 clas><a href="#"><span class="">Kathryn</span> Ryan</a></h3>
-					<span class="d-block position mb-4">CEO, Founder, Atty.</span>
-					<p>Separated they live in.
-						Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
-						ocean.</p>
-					<p class="mb-0"><a href="#" class="more dark">Learn More <span
-								class="icon-arrow_forward"></span></a></p>
-
-
-				</div>
-				<!-- End Column 4 -->
-
-
-
-			</div>
-		</div>
-	</div>
-	<!-- End Team Section -->
-
-
-
-	<!-- Start Testimonial Slider -->
-	<div class="testimonial-section before-footer-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7 mx-auto text-center">
-					<h2 class="section-title">Testimonials</h2>
-				</div>
-			</div>
-
-			<div class="row justify-content-center">
-				<div class="col-lg-12">
-					<div class="testimonial-slider-wrap text-center">
-
-						<div id="testimonial-nav">
-							<span class="prev" data-controls="prev"><span class="fa fa-chevron-left"></span></span>
-							<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+	 <!-- Start Footer Section -->
+		<footer class="footer-section">
+			<div class="container relative">
+				<div class="row g-5 mb-5">
+					<div class="col-lg-4">
+						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a>
 						</div>
+						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
+							อาหารเม็ด
+							อาหารเปียก ขนม ของใช้ ของเล่น</p>
 
-						<div class="testimonial-slider">
+						<ul class="list-unstyled custom-social">
+							<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
+									Shop.</strong></li>
 
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-
-										<div class="testimonial-block text-center">
-											<blockquote class="mb-5">
-												<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-													odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-													vulputate velit imperdiet dolor tempor tristique. Pellentesque
-													habitant morbi tristique senectus et netus et malesuada fames ac
-													turpis egestas. Integer convallis volutpat dui quis
-													scelerisque.&rdquo;</p>
-											</blockquote>
-
-											<div class="author-info">
-												<div class="author-pic">
-													<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-												</div>
-												<h3 class="font-weight-bold">Maria Jones</h3>
-												<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-
-										<div class="testimonial-block text-center">
-											<blockquote class="mb-5">
-												<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-													odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-													vulputate velit imperdiet dolor tempor tristique. Pellentesque
-													habitant morbi tristique senectus et netus et malesuada fames ac
-													turpis egestas. Integer convallis volutpat dui quis
-													scelerisque.&rdquo;</p>
-											</blockquote>
-
-											<div class="author-info">
-												<div class="author-pic">
-													<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-												</div>
-												<h3 class="font-weight-bold">Maria Jones</h3>
-												<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
-							<div class="item">
-								<div class="row justify-content-center">
-									<div class="col-lg-8 mx-auto">
-
-										<div class="testimonial-block text-center">
-											<blockquote class="mb-5">
-												<p>&ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae
-													odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-													vulputate velit imperdiet dolor tempor tristique. Pellentesque
-													habitant morbi tristique senectus et netus et malesuada fames ac
-													turpis egestas. Integer convallis volutpat dui quis
-													scelerisque.&rdquo;</p>
-											</blockquote>
-
-											<div class="author-info">
-												<div class="author-pic">
-													<img src="images/person-1.png" alt="Maria Jones" class="img-fluid">
-												</div>
-												<h3 class="font-weight-bold">Maria Jones</h3>
-												<span class="position d-block mb-3">CEO, Co-Founder, XYZ Inc.</span>
-											</div>
-										</div>
-
-									</div>
-								</div>
-							</div>
-							<!-- END item -->
-
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Testimonial Slider -->
-
-
-
-	<!-- Start Footer Section -->
-	<footer class="footer-section">
-		<div class="container relative">
-			<div class="row g-5 mb-5">
-				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด
-						อาหารเปียก ขนม ของใช้ ของเล่น</p>
-
-					<ul class="list-unstyled custom-social">
-						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
-								Shop.</strong></li>
-
-					</ul>
-				</div>
-				<div class="col-lg-8">
-					<div class="row links-wrap">
-						<div class="col-6 col-sm-6 col-md-3">
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="index.php">หน้าเเรก</a></li>
-								<li><a href="shop.php">สินค้า</a></li>
-							</ul>
-						</div>
-
-						<div class="col-6 col-sm-6 col-md-3">
-							<ul class="list-unstyled">
-								<li><a href="blog.php">บทความ</a></li>
-								<li><a href="about.php">เกี่ยวกับเรา</a></li>
-								<li><a href="contact.php">ติดต่อเรา</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="border-top copyright">
-				<div class="row pt-4">
-					<div>
-						<ul class="list-unstyled d-inline-flex ms-auto">
-							<li class="me-4">เว็บไซต์นี้เป็นส่วนหนึ่งของวิชาโครงงานเทคโนโลยีสารสนเทศและการสื่อสาร</li>
-							<li class="me-4">มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา </li>
 						</ul>
 					</div>
+					<div class="col-lg-8">
+						<div class="row links-wrap">
+							<div class="col-6 col-sm-6 col-md-3">
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="index.php">หน้าเเรก</a></li>
+									<li><a href="shop.php">สินค้า</a></li>
+								</ul>
+							</div>
+
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="blog.php">บทความ</a></li>
+									<li><a href="about.php">เกี่ยวกับเรา</a></li>
+									<li><a href="contact.php">ติดต่อเรา</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="border-top copyright">
+					<div class="row pt-4">
+						<div>
+							<ul class="list-unstyled d-inline-flex ms-auto">
+								<li class="me-4">เว็บไซต์นี้เป็นส่วนหนึ่งของวิชาโครงงานเทคโนโลยีสารสนเทศและการสื่อสาร
+								</li>
+								<li class="me-4">มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา </li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
-	<!-- End Footer Section -->
+		</footer>
+		<!-- End Footer Section -->
 
 
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/tiny-slider.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-	</script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-	</script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+		</script>
 
 </body>
 

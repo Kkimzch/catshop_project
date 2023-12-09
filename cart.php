@@ -1,10 +1,4 @@
-<!-- /*
-* Bootstrap 5
-* Template Name: Cat Shop
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+
 <!doctype html>
 <html lang="en">
 
@@ -40,12 +34,12 @@
     <div class="container">
       <a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-        aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+        aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsCat Shop">
+      <div class="collapse navbar-collapse" id="navbarsCatShop">
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item ">
             <a class="nav-link" href="index.php">หน้าเเรก</a>
@@ -62,9 +56,9 @@
             <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false"><img src="images/user.svg"></a>
             <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>
+              <a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>
                 <?php echo $_SESSION['last_name'];?></a>
-              <a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+              <a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
             </div>
@@ -187,7 +181,7 @@
           <div class="row justify-content-end">
             <div class="col-md-7">
               <div class="row">
-                <div class="col-md-12 text-right border-bottom mb-5">
+                <div class="col-md-12 text-right border-bottom mb-2">
                   <h3 class="text-black h4 text-uppercase">สรุปรายการ</h3>
                 </div>
               </div>
@@ -201,7 +195,7 @@
               </div>
               <div class="row mb-3">
                 <div class="col-md-6">
-                  <span class="text-black">ค่าจัดส่ง <?php echo $someWeight;?></span>
+                  <span class="text-black">ค่าจัดส่ง</span>
                 </div>
                 <div class="col-md-6 text-end">
                   <!-- คำนวนค่าส่ง -->

@@ -36,12 +36,12 @@
 		<div class="container">
 			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCat Shop"
-				aria-controls="navbarsCat Shop" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
+				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarsCat Shop">
+			<div class="collapse navbar-collapse" id="navbarsCatShop">
 				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 					<li class="nav-item ">
 						<a class="nav-link" href="index.php">หน้าเเรก</a>
@@ -60,8 +60,8 @@
 						<a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><img src="images/user.svg"></a>
 						<div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#"><?php echo $_SESSION['first_name'];?>   <?php echo $_SESSION['last_name'];?></a>
-							<a class="dropdown-item" href="#">ประวัติคำสั่งซื้อ</a>
+							<a class="dropdown-item" href="profile.php"><?php echo $_SESSION['first_name'];?>   <?php echo $_SESSION['last_name'];?></a>
+							<a class="dropdown-item" href="history.php">ประวัติคำสั่งซื้อ</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="index.php?logout='1'">ออกจากระบบ</a>
 						</div>
@@ -104,7 +104,16 @@
 		</div>
 	</div>
 	<!-- End Hero Section -->
-
+<!-- sraech -->
+<div class="container mt-5">
+		<form action="product_search.php" method="POST">
+			<div class="d-flex">
+				<input type="search" class="form-control mx-2" name="search" placeholder="ค้นหาเมนู" aria-label="Search"
+					aria-describedby="search-addon" />
+				<button type="submit" class="btn btn-outline-success my-2 my-sm-0">ค้นหา</button>
+			</div>
+		</form>
+	</div>
 	<!-- Type -->
 	<div class="container" align="center">
 		<div class="pt-4" style="overflow: auto;

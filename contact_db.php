@@ -13,7 +13,7 @@ $email = $_POST['email'];
 $tel = $_POST['tel'];
 $message = $_POST['message'];
 
-$sql ="INSERT INTO `contactus` (`contactus_id`, `fist_name`, `last_name`, `email`, `tel`, `message`) 
+$sql ="INSERT INTO `contactus` (`contactus_id`, `first_name`, `last_name`, `email`, `tel`, `message`) 
 VALUES (NULL, '$fname', '$lname', '$email', '$tel', '$message');";
  mysqli_query($conn, $sql);
  echo '
