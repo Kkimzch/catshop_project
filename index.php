@@ -50,7 +50,6 @@
 					<li><a class="nav-link" href="about.php">เกี่ยวกับเรา</a></li>
 					<li><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
 				</ul>
-
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 					<?php
 						if (isset($_SESSION['email'])) { 

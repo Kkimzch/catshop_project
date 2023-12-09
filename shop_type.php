@@ -104,7 +104,16 @@
 		</div>
 	</div>
 	<!-- End Hero Section -->
-
+<!-- sraech -->
+<div class="container mt-5">
+		<form action="product_search.php" method="POST">
+			<div class="d-flex">
+				<input type="search" class="form-control mx-2" name="search" placeholder="ค้นหาเมนู" aria-label="Search"
+					aria-describedby="search-addon" />
+				<button type="submit" class="btn btn-outline-success my-2 my-sm-0">ค้นหา</button>
+			</div>
+		</form>
+	</div>
 	<!-- Type -->
 	<div class="container" align="center">
 		<div class="pt-4" style="overflow: auto;

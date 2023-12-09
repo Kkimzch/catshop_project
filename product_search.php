@@ -103,15 +103,14 @@
 
 	<!-- sraech -->
 	<div class="container mt-5">
-		<form action="product_search.php" method="POST">
-			<div class="d-flex">
-				<input type="search" class="form-control mx-2" name="search" placeholder="ค้นหาเมนู" aria-label="Search"
-					aria-describedby="search-addon" />
-				<button type="submit" class="btn btn-outline-success my-2 my-sm-0">ค้นหา</button>
-			</div>
-		</form>
+	<form action="product_search.php" method="POST">
+      <div class="d-flex">
+        <input type="search" class="form-control mx-2" name="search" placeholder="ค้นหาเมนู" aria-label="Search" aria-describedby="search-addon" />
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">ค้นหา</button>
+      </div>
+    </form>
 	</div>
-
+	
 
 	<!-- Type -->
 	<div class="container" align="center">
@@ -148,7 +147,9 @@
 		<div class="container">
 			<div class="row">
 				<?php
-      				$sql2 = "SELECT * FROM `product` WHERE 1";
+
+                    $name = $_POST["search"];
+      				$sql2 = "SELECT * FROM `product` WHERE name LIKE '%$name%'";
      				$result2 = mysqli_query($conn, $sql2);
      				while ($row2 = $result2->fetch_assoc()) {
      			?>
