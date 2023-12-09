@@ -6,12 +6,23 @@
 	require("../database.php");
 	session_start();
     if (!isset($_SESSION['email'])) {
-    header('location: Backoffice/login.php');
+    header('location: login.php');
+    }
+    if (isset($_SESSION['status'])) {
+        $status = $_SESSION['status'];
+        if($status == 'User'){
+         header('location: login.php');
+        }
     }
 
-	 if (isset($_GET['logout'])) {
+	if (isset($_GET['logout'])) {
+        $logout = $_GET['logout']; 
 		session_destroy();
-		unset($_SESSION['email']);
+        if($logout == '1'){
+            unset($_SESSION['email']);
+            unset($_SESSION['status']);
+            header('location: index.php');
+           }
 	 }
 	?>
 
