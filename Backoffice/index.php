@@ -6,12 +6,23 @@
 	require("../database.php");
 	session_start();
     if (!isset($_SESSION['email'])) {
-    header('location: Backoffice/login.php');
+    header('location: login.php');
+    }
+    if (isset($_SESSION['status'])) {
+        $status = $_SESSION['status'];
+        if($status == 'User'){
+         header('location: login.php');
+        }
     }
 
-	 if (isset($_GET['logout'])) {
+	if (isset($_GET['logout'])) {
+        $logout = $_GET['logout']; 
 		session_destroy();
-		unset($_SESSION['email']);
+        if($logout == '1'){
+            unset($_SESSION['email']);
+            unset($_SESSION['status']);
+            header('location: index.php');
+           }
 	 }
 	?>
 
@@ -102,7 +113,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-h6 font-weight-bold text-primary text-uppercase mb-1">
-                                                    กำลังจัดเตรียม</div>
+                                                    เตรียมจัดส่ง</div>
                                                     <?php
                                                     $query2 = "SELECT COUNT(*) AS total FROM orders WHERE status='เตรียมจัดส่ง'";
                                                     $query_result2 = $conn->query($query2);
@@ -248,7 +259,7 @@
                                                 }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                                 ?>
                                             <div class="text-primary">
-                                                กำลังจัดเตรียม
+                                                เตรียมจัดส่ง
                                             </div>
                                             <?php  
                                                 }elseif ($row['status'] == 'จัดส่งเเล้ว') {

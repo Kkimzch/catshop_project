@@ -122,7 +122,7 @@
                                         }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                         ?>
                                     <div class="alert alert-primary m-0 d-flex align-self-center">
-                                        กำลังจัดเตรียม
+                                        เตรียมจัดส่ง
                                     </div>
                                     <?php  
                                         }elseif ($row['status'] == 'จัดส่งเเล้ว') {

@@ -36,7 +36,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="order_list.php?status=รอตรวจสอบ">รอตรวจสอบ</a>
-                <a class="collapse-item" href="order_list.php?status=กำลังจัดเตรียม">กำลังจัดเตรียม</a>
+                <a class="collapse-item" href="order_list.php?status=เตรียมจัดส่ง">เตรียมจัดส่ง</a>
                 <a class="collapse-item" href="order_list.php?status=จัดส่งเเล้ว">จัดส่งเเล้ว</a>
                 <a class="collapse-item" href="order_list.php?status=ยกเลิก">ยกเลิก</a>
             </div>
@@ -82,7 +82,7 @@
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">อื่น ๆ</h6>
                 <a class="collapse-item" href="payment.php">ช่องทางการชำระเงิน</a>
-                <a class="collapse-item" href="blog.php">บทความ</a>
+                <!-- <a class="collapse-item" href="blog.php">บทความ</a> -->
             </div>
         </div>
     </li>
