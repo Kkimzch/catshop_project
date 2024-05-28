@@ -93,7 +93,7 @@
                                               }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                          ?>
                                 <div class="text-primary text-center">
-                                    กำลังจัดเตรียม
+                                    เตรียมจัดส่ง
                                 </div>
                                 <?php  
                                              }elseif ($row['status'] == 'จัดส่งเเล้ว') {

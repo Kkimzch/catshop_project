@@ -144,10 +144,10 @@
                                     </div>
 
                                     <?php
-                                        }elseif ($row['status'] == 'กำลังจัดเตรียม') {
+                                        }elseif ($row['status'] == 'เตรียมจัดส่ง') {
                                         ?>
                                     <div class="text-primary">
-                                        กำลังจัดเตรียม
+                                        เตรียมจัดส่ง
                                     </div>
                                     <?php  
                                         }elseif ($row['status'] == 'จัดส่งเเล้ว') {
