@@ -29,7 +29,7 @@
     <!-- Start Header/Navigation -->
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
+            <a class="navbar-brand" href="index.php">Kitschi Plus<span>.</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
                 aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
@@ -154,7 +154,7 @@
                                 ผู้รับ : <?php echo $row2['first_name'];?> <?php echo $row2['last_name'];?>
                             </div>
                             <div class="col">
-                                เบอร์โทรศัพท์ : <?php echo $row2['tel'];?>
+                                เบอร์โทรศัพท์ : <?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1-$2-$3", $row2['tel']); ?>
                             </div>
                         </div>
                         <p class="m-0">
