@@ -56,7 +56,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CatShop. - Backoffice</title>
+   <title>Kitschi Plus - Backoffice</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CatShop. - Backoffice</title>
+   <title>Kitschi Plus - Backoffice</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -123,10 +123,10 @@
                             <div class="row">
                                 <div class="col">
                                     <p class="m-0">
-                                        ผู้รับ : <?php echo $row2['first_name'];?> <?php echo $row2['last_name'];?>
+                                        ผู้รับ : คุณ <?php echo $row2['first_name'];?> <?php echo $row2['last_name'];?>
                                     </p>
                                     <p class="m-0 mt-2" div>
-                                        เบอร์โทรศัพท์ : <?php echo $row2['tel'];?>
+                                        เบอร์โทรศัพท์ : <?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1-$2-$3", $row2['tel']); ?>
                                     </p>
 
                                     <p class="m-0 mt-2">

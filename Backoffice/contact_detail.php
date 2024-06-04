@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CatShop. - Backoffice</title>
+   <title>Kitschi Plus - Backoffice</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -105,7 +105,7 @@
                                 <div class="row text-dark mt-3">
                                     <div class="col col-lg-3 align-self-center">เบอร์โทรศัพท์</div>
                                     <div class="col col-lg-9">
-                                        <?php echo $row['tel']; ?>
+                                    0<?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1-$2-$3", $row['tel']); ?>
                                     </div>
                                 </div>
                                 <div class="row text-dark mt-3">
