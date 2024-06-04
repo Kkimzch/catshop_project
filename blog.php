@@ -29,7 +29,7 @@
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
 
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
+			<a class="navbar-brand" href="index.php">Kitschi Plus<span>.</span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
 				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
@@ -133,13 +133,11 @@
 		<div class="container relative">
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด
-						อาหารเปียก ขนม ของใช้ ของเล่น</p>
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Kitschi Plus<span>.</span></a></div>
+					<p class="mb-4">คิชชี่ พลัส มูสบำรุงแมวเป็นอาหารปั่นละเอียด วัตถุดิบเกรดพรีเมี่ยม มีสารอาหารครบตามหลักโภชนาการ AAFCO</p>
 
 					<ul class="list-unstyled custom-social">
-						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
-								Shop.</strong></li>
+						<li><a href="https://www.facebook.com/Kitschiplus"><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">คิชชี่ พลัส (Kitschiplus)</strong></li>
 
 					</ul>
 				</div>

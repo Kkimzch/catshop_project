@@ -29,7 +29,7 @@
     <!-- Start Header/Navigation -->
     <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
         <div class="container">
-            <a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
+            <a class="navbar-brand" href="index.php">Kitschi Plus<span>.</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
                 aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
@@ -148,15 +148,16 @@
                                         <h6>฿<?php echo $row['sometotal']?></h6>
                                     </div>
                                     <p class="mb-1">
-                                        ผู้รับ : 
-                                        <?php
+                                        ชื่อผู้รับ [<?php
                                         $order_id = $row['order_id'];
                                         $sql2 = "SELECT * FROM `address` WHERE order_id = '$order_id';";
                                         $result2 = mysqli_query($conn, $sql2);
                                         $row2 = $result2->fetch_assoc();
-                                        echo $row2['first_name']; 
                                         ?>
-                                        <?php echo $row2['last_name'];?>
+                                        <?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "$1-$2-$3", $row2['tel']); ?>
+                                        (คุณ <?php echo $row2['first_name'];?>
+                                        <?php echo $row2['last_name'];?>)]
+                                        
                                     </p>
                                     <p class="p-0 m-0">จำนวน : <?php
                                                     $sql3 ="SELECT COUNT(*) AS total FROM order_detail WHERE order_id=$order_id";

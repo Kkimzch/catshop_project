@@ -27,7 +27,7 @@
 	<!-- Start Header/Navigation -->
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
+			<a class="navbar-brand" href="index.php">Kitschi Plus<span>.</span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
 				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,7 +113,7 @@
 									</svg>
 								</div> <!-- /.icon -->
 								<div class="service-contents">
-									<p>1061 ซ. อิสรภาพ 15 แขวง หิรัญรูจี เขตธนบุรี กรุงเทพมหานคร 10600</p>
+									<p>141 ซ. เพชรเกษม 68 แยก 33 กรุงเทพมหานคร 10160</p>
 								</div> <!-- /.service-contents-->
 							</div> <!-- /.service -->
 						</div>
@@ -129,7 +129,7 @@
 										</svg>
 									</div> <!-- /.icon -->
 									<div class="service-contents">
-										<p>admin@email.com</p>
+										<p>suprungruang.srr@gmail.com</p>
 									</div> <!-- /.service-contents-->
 								</div> <!-- /.service -->
 							</div>
@@ -145,13 +145,13 @@
 										</svg>
 									</div> <!-- /.icon -->
 									<div class="service-contents">
-										<p>0958374628</p>
+										<p>093-926-1915</p>
 									</div> <!-- /.service-contents-->
 								</div> <!-- /.service -->
 							</div>
 						</div>
 						<div>
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.7721741060855!2d100.4862268750899!3d13.73223863665757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e298fe8dcd0d13%3A0x8166225c8081ce3a!2z4Lih4Lir4Liy4Lin4Li04LiX4Lii4Liy4Lil4Lix4Lii4Lij4Liy4LiK4Lig4Lix4LiP4Lia4LmJ4Liy4LiZ4Liq4Lih4LmA4LiU4LmH4LiI4LmA4LiI4LmJ4Liy4Lie4Lij4Liw4Lii4Liy!5e0!3m2!1sth!2sth!4v1701795839884!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.3005234036336!2d100.37887437525772!3d13.7002397866863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29710a8b30ee9%3A0x78f0c026e654d2da!2z4LiE4Li04LiK4LiK4Li14LmI4Lie4Lil4Lix4LiqIOC4reC4suC4q-C4suC4o-C4muC4s-C4o-C4uOC4h-C5geC4oeC4pyDguYDguJnguLfguYnguK3guKHguLnguKrguYDguJvguYfguJnguK3guLLguKvguLLguKPguJvguLHguYjguJnguKXguLDguYDguK3guLXguKLguJQg4Lin4Lix4LiV4LiW4Li44LiU4Li04Lia4LmA4LiB4Lij4LiU4Lie4Lij4Li14LmA4Lih4Li14LmI4Lii4LihIOC4oeC4teC4quC4suC4o-C4reC4suC4q-C4suC4o-C4hOC4o-C4muC4leC4suC4oeC4q-C4peC4seC4geC5guC4oOC4iuC4meC4suC4geC4suC4oyBBQUZDTw!5e0!3m2!1sth!2sth!4v1717471334868!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						</div>
 					</div>
 					<div class="col col-lg-6">
@@ -180,7 +180,7 @@
 							</div>
 
 							<div class="form-group mb-5 mt-2">
-								<label class="text-black" for="message">ข้อความ</label>
+								<label class="text-black" for="message">คำถาม - ข้อเสนอเเนะ</label>
 								<textarea name="message" class="form-control" id="message" cols="30" rows="5"
 									required></textarea>
 							</div>
@@ -203,13 +203,11 @@
 		<div class="container relative">
 			<div class="row g-5 mb-5">
 				<div class="col-lg-4">
-					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a></div>
-					<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว อาหารเม็ด
-						อาหารเปียก ขนม ของใช้ ของเล่น</p>
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Kitschi Plus<span>.</span></a></div>
+					<p class="mb-4">คิชชี่ พลัส มูสบำรุงแมวเป็นอาหารปั่นละเอียด วัตถุดิบเกรดพรีเมี่ยม มีสารอาหารครบตามหลักโภชนาการ AAFCO</p>
 
 					<ul class="list-unstyled custom-social">
-						<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
-								Shop.</strong></li>
+						<li><a href="https://www.facebook.com/Kitschiplus"><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">คิชชี่ พลัส (Kitschiplus)</strong></li>
 
 					</ul>
 				</div>

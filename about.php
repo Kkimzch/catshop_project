@@ -27,7 +27,7 @@
 	<!-- Start Header/Navigation -->
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Cat Shop navigation bar">
 		<div class="container">
-			<a class="navbar-brand" href="index.php">Cat Shop<span>.</span></a>
+			<a class="navbar-brand" href="index.php">Kitschi Plus<span>.</span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsCatShop"
 				aria-controls="navbarsCatShop" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,8 +101,8 @@
 		<div class="container">
 			<div class="row justify-content-between align-items-center">
 				<div class="col-lg-6">
-					<h2 class="section-title">ยินดีต้อนรับทุกท่านสู่ร้าน Cat Shop.</h2>
-					<p>ที่ Cat Shop. เราเข้าใจความหมายของคำว่า "ความรัก" และเรามุ่งมั่นที่จะให้ความรักนี้ถึงกับสมาชิกทุกคนในครอบครัวของเราที่มีขนกว่า. เราคือทีมงานที่มีความคล่องตัวและรู้จักแมวมากมาย ซึ่งทำให้เราเป็นผู้เชี่ยวชาญในการเลือกและจัดหาอาหารที่มีคุณภาพสูงสุดสำหรับเพื่อนที่มีหางของคุณ.</p>
+					<h2 class="section-title">ยินดีต้อนรับทุกท่านสู่ร้าน Kitschi Plus.</h2>
+					<p>ที่ Kitschi Plus. เราเข้าใจความหมายของคำว่า "ความรัก" และเรามุ่งมั่นที่จะให้ความรักนี้ถึงกับสมาชิกทุกคนในครอบครัวของเราที่มีขนกว่า. เราคือทีมงานที่มีความคล่องตัวและรู้จักแมวมากมาย ซึ่งทำให้เราเป็นผู้เชี่ยวชาญในการเลือกและจัดหาอาหารที่มีคุณภาพสูงสุดสำหรับเพื่อนที่มีหางของคุณ.</p>
 
 					<div class="row my-5">
 						<div class="col-6 col-md-6">
@@ -121,7 +121,7 @@
 									<img src="images/bag.svg" alt="Image" class="imf-fluid">
 								</div>
 								<h3>สินค้าที่หลากหลาย</h3>
-								<p>Cat Shop. มีการสรรหาสินค้าที่หลากหลาย, ไม่ว่าจะเป็นอาหาร, ของเล่น, หรืออุปกรณ์การดูแล, เพื่อให้คุณแมวของคุณได้รับทุกสิ่งที่ต้องการ.</p>
+								<p>Kitschi Plus. มีการสรรหาสินค้าที่หลากหลาย, ไม่ว่าจะเป็นอาหาร, ของเล่น, หรืออุปกรณ์การดูแล, เพื่อให้คุณแมวของคุณได้รับทุกสิ่งที่ต้องการ.</p>
 							</div>
 						</div>
 
@@ -161,15 +161,15 @@
 			<div class="container relative">
 				<div class="row g-5 mb-5">
 					<div class="col-lg-4">
-						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Cat Shop<span>.</span></a>
+						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Kitschi Plus<span>.</span></a>
 						</div>
-						<p class="mb-4">อาหารเเมวคุณภาพดีสำหรับเจ้านายที่น่ารัก ได้รวบรวมทั้งหมดมาไว้ที่นี่เเล้ว
-							อาหารเม็ด
-							อาหารเปียก ขนม ของใช้ ของเล่น</p>
+						<p class="mb-4">คิชชี่ พลัส มูสบำรุงแมวเป็นอาหารปั่นละเอียด วัตถุดิบเกรดพรีเมี่ยม มีสารอาหารครบตามหลักโภชนาการ AAFCO
+
+</p>
 
 						<ul class="list-unstyled custom-social">
-							<li><a href=""><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">Cat
-									Shop.</strong></li>
+						<li><a href="https://www.facebook.com/Kitschiplus"><span class="fa fa-brands fa-facebook-f"></span></a><strong class="m-2">คิชชี่ พลัส (Kitschiplus)</strong></li>
+
 
 						</ul>
 					</div>
